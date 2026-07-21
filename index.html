@@ -187,8 +187,8 @@ p.lead + p.lead{ margin-top:14px; }
 
 /* ---------- packages ---------- */
 .packages .content{ max-width:680px; }
-.pkgs{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px; }
-.pkg{ padding:18px 16px 20px; border-radius:20px; }
+.pkgs{ display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:14px; }
+.pkg{ padding:13px 14px 15px; border-radius:18px; }
 .pkg.hero{ grid-column:1 / -1; border:1px solid rgba(236,255,107,.45); }
 .pkg .k{ font-family:var(--disp); font-weight:400; font-size:20px; letter-spacing:.01em; }
 .pkg.hero .k{ font-size:30px; color:var(--lemon); }
@@ -264,7 +264,6 @@ p.lead + p.lead{ margin-top:14px; }
 /* ---------- categories ---------- */
 .featurechip{ position:absolute; top:-74px; right:2px; width:116px; height:150px; border-radius:16px; overflow:hidden;
   border:1px solid rgba(255,255,255,.4); box-shadow:0 16px 28px -10px rgba(2,16,24,.75); transform:rotate(-3deg); z-index:4; }
-.featurechip.big{ width:140px; height:180px; top:-92px; }
 .featurechip img{ width:100%; height:100%; object-fit:cover; object-position:center 20%; }
 .featurechip figcaption{ position:absolute; left:0; right:0; bottom:0; font-family:var(--data); font-size:8.5px; letter-spacing:.1em;
   text-transform:uppercase; text-align:center; padding:4px; background:rgba(4,20,28,.62); color:var(--aqua); }
@@ -288,13 +287,34 @@ p.lead + p.lead{ margin-top:14px; }
 .stat span{ display:block; margin-top:6px; font-size:10.5px; line-height:1.3; color:rgba(241,236,224,.75); }
 
 /* ---------- space setup plan ---------- */
-.plan{ padding:14px; }
-.plansvg{ width:100%; max-width:340px; height:auto; display:block; margin:0 auto; }
-.venue{ margin-top:12px; font-family:var(--data); font-size:11px; letter-spacing:.05em; color:rgba(241,236,224,.7); text-align:center; }
+.plan{ padding:12px; }
+.plansvg{ width:100%; max-width:300px; max-height:47dvh; height:auto; display:block; margin:0 auto; }
+.venue{ margin-top:10px; line-height:1.35; font-family:var(--data); font-size:11px; letter-spacing:.05em; color:rgba(241,236,224,.7); text-align:center; }
 .venue b{ color:var(--aqua); font-weight:500; }
 
+
+.cs-feature{ width:110px; height:140px; border-radius:16px; overflow:hidden; margin:0 0 14px 2px; position:relative;
+  border:1px solid rgba(255,255,255,.4); box-shadow:0 16px 28px -10px rgba(2,16,24,.75); transform:rotate(-3deg); }
+.cs-feature img{ width:100%; height:100%; object-fit:cover; object-position:center 18%; }
+.cs-feature figcaption{ position:absolute; left:0; right:0; bottom:0; font-family:var(--data); font-size:8.5px;
+  letter-spacing:.1em; text-transform:uppercase; text-align:center; padding:4px; background:rgba(4,20,28,.62); color:var(--aqua); }
+.slide.catsp{ justify-content:flex-start; padding-top:calc(env(safe-area-inset-top) + 30px); }
+
+/* let's discuss contacts */
+.slide.discuss{ justify-content:flex-start; padding-top:calc(env(safe-area-inset-top) + 26px); }
+.discuss .glasslogo{ width:min(52vw,250px); }
+.contact{ display:flex; flex-direction:column; gap:9px; }
+.contact .cta{ display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:14px; text-decoration:none; }
+.contact .cta.wa{ background:linear-gradient(135deg,var(--aqua),var(--teal)); color:#04212e; }
+.contact .cta.em{ background:var(--glass-fill); color:var(--foam); border:1px solid var(--glass-border); }
+.contact .cta b{ font-family:var(--data); font-size:11px; letter-spacing:.12em; text-transform:uppercase; width:76px; flex:none; }
+.contact .cta span{ font-size:15px; font-weight:500; }
+.contact .crow{ display:flex; gap:12px; align-items:baseline; padding:2px 2px; }
+.contact .crow b{ font-family:var(--data); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--aqua); width:76px; flex:none; }
+.contact .crow span{ font-size:13.5px; color:rgba(241,236,224,.9); }
+
 /* ---------- tall slides: anchor to top so title stays visible ---------- */
-.slide.packages, .slide.setup{ justify-content:flex-start; padding-top:calc(env(safe-area-inset-top) + 30px); }
+.slide.packages, .slide.setup{ justify-content:flex-start; padding-top:calc(env(safe-area-inset-top) + 22px); }
 .slide.setup .content{ margin:0 auto; }
 
 /* ---------- desktop: big package tiles filling the screen ---------- */
@@ -649,6 +669,20 @@ p.lead + p.lead{ margin-top:14px; }
     </div>
   </section>
 
+  <!-- CONTENT & EXPOSURE -->
+  <section class="slide expo" data-label="Content & Exposure">
+    <div class="media"><video src="assets/clips/clip3.mp4" muted loop playsinline preload="auto" style="background:var(--ink)"></video><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="eyebrow reveal">Content &amp; Exposure</div>
+      <h2 class="reveal d1">Behind every<br>trick, your brand</h2>
+      <div class="glass pad reveal d2">
+        <p class="lead">Captured live — photo (Alan), video + drone (Mufti), rider interviews (Igi). After: a recap film on MIK's channels and a full photo bank shared with sponsors.</p>
+        <p class="lead" style="margin-top:12px"><span class="spark">The multiplier:</span> every visiting rider films their own trip — their runs reach skim communities in 10+ countries, your branding behind every trick.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- 8 · SPACE SETUP -->
   <section class="slide setup" data-label="Space Setup">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
@@ -726,12 +760,31 @@ p.lead + p.lead{ margin-top:14px; }
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
-      <figure class="featurechip big reveal"><img src="assets/categories/women.jpg" alt=""><figcaption>Women · open</figcaption></figure>
+      <figure class="cs-feature reveal"><img src="assets/categories/women.jpg" alt=""><figcaption>Women · open</figcaption></figure>
       <div class="eyebrow reveal">Add-on · Category sponsors</div>
       <h2 class="reveal d1">Name a<br>category</h2>
       <div class="glass pad reveal d2">
         <p class="lead">Each of the five categories can carry its own title sponsor — your brand in the category name, on that podium, and in every MC call for the division.</p>
         <p class="lead" style="margin-top:12px"><span class="spark">e.g. the Women's category presented by ___.</span> Included with Shorebreak, or added to any package.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LET'S DISCUSS -->
+  <section class="slide discuss" data-label="Let's Discuss">
+    <div class="media"><img src="assets/discuss/sunset.jpg" alt="" style="object-position:center 42%"><div class="grain"></div></div>
+    <div class="content">
+      <div class="glasslogo reveal" role="img" aria-label="Bali Skim Gathering">
+        <div class="gl-fill"></div><div class="gl-sheen"></div>
+        <img class="gl-edge" src="assets/logo-fest-stroke.svg" alt="">
+      </div>
+      <div class="eyebrow reveal d1" style="margin-top:14px">Let's Discuss · 12–13 Sep 2026 · Berawa</div>
+      <div class="glass pad reveal d2 contact">
+        <a class="cta wa" href="https://wa.me/628562018133" target="_blank" rel="noopener"><b>WhatsApp</b><span>Gonzo · +62 856 2018 133</span></a>
+        <a class="cta em" href="mailto:mikskimboards@gmail.com"><b>Email</b><span>mikskimboards@gmail.com</span></a>
+        <div class="crow"><b>Studio</b><span>MIK Skimboards — Canggu, Bali</span></div>
+        <div class="crow"><b>Online</b><span>@mikskimboards · mikskimboards.com</span></div>
+        <div class="crow"><b>BCA</b><span>7445038385 · Tomi Cobrazil</span></div>
       </div>
     </div>
   </section>
