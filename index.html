@@ -83,8 +83,12 @@ body{
 .media .flow b:nth-child(1){ width:70%; height:70%; left:-10%; top:-10%; background:var(--teal); }
 .media .flow b:nth-child(2){ width:60%; height:60%; right:-15%; top:10%; background:var(--aqua); animation-duration:22s; animation-delay:-4s; }
 .media .flow b:nth-child(3){ width:55%; height:55%; left:20%; bottom:-20%; background:#0a3a4a; animation-duration:26s; animation-delay:-8s; }
-.slide[data-tone="warm"] .flow b:nth-child(2){ background:var(--lemon); }
-.slide[data-tone="warm"] .flow b:nth-child(1){ background:var(--pink); }
+.slide[data-tone="warm"] .flow b:nth-child(1){ background:var(--coral); }
+.slide[data-tone="warm"] .flow b:nth-child(2){ background:var(--pink); }
+.slide[data-tone="warm"] .flow b:nth-child(3){ background:#5e2740; }
+.slide[data-tone="sunny"] .flow b:nth-child(1){ background:var(--lemon); }
+.slide[data-tone="sunny"] .flow b:nth-child(2){ background:var(--coral); }
+.slide[data-tone="sunny"] .flow b:nth-child(3){ background:#0c6c77; }
 @keyframes drift{ to{ transform:translate3d(6%,4%,0) scale(1.15); } }
 
 /* legibility veil */
@@ -230,14 +234,16 @@ p.lead + p.lead{ margin-top:14px; }
 
 
 /* ---------- language gate ---------- */
-.slide.lang{ justify-content:center; }
+.slide.lang{ justify-content:flex-end; }
+.langwrap{ margin-bottom:30px; }
 .langwrap{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px; width:100%; max-width:420px; margin:0 auto; }
 .slide.lang .glasslogo{ width:min(54vw,300px); }
-.langlabel{ font-family:var(--data); font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:rgba(241,236,224,.65); }
+.langlabel{ font-family:var(--data); font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:#fff; text-shadow:0 2px 12px rgba(0,10,16,.6); }
 .langbtns{ display:flex; flex-direction:column; gap:10px; width:100%; max-width:290px; }
 .langbtn{ font-family:var(--disp); font-weight:400; font-size:20px; line-height:1; padding:15px 20px; border-radius:16px;
-  border:1px solid var(--glass-border); background:var(--glass-fill); backdrop-filter:blur(12px) saturate(160%);
-  -webkit-backdrop-filter:blur(12px) saturate(160%); color:var(--foam); cursor:pointer; transition:transform .15s ease; }
+  border:1px solid rgba(255,255,255,.4); background:rgba(255,255,255,.12); backdrop-filter:blur(14px) saturate(180%); 
+  -webkit-backdrop-filter:blur(14px) saturate(180%); color:#fff; cursor:pointer; transition:transform .15s ease;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.5), 0 10px 24px -10px rgba(0,10,20,.6); }
 .langbtn:hover{ transform:translateY(-1px); }
 .langbtn.active{ background:linear-gradient(135deg,var(--aqua),var(--teal)); color:#04212e; border-color:transparent; }
 .langbtn[disabled]{ opacity:.42; cursor:not-allowed; }
@@ -245,7 +251,7 @@ p.lead + p.lead{ margin-top:14px; }
 .fsbtn{ font-family:var(--data); font-size:11px; letter-spacing:.14em; text-transform:uppercase; padding:11px 20px; border-radius:999px;
   border:1px solid rgba(255,255,255,.3); background:rgba(4,20,28,.4); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
   color:var(--foam); cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
-.langscroll{ font-family:var(--data); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.5); }
+.langscroll{ font-family:var(--data); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.75); text-shadow:0 2px 10px rgba(0,10,16,.7); }
 
 /* ---------- category icons ---------- */
 .catlist li{ display:flex; align-items:center; gap:13px; padding:11px 0; }
@@ -330,6 +336,9 @@ p.lead + p.lead{ margin-top:14px; }
 
 
 /* ---------- country bubbles ---------- */
+.big10{ display:flex; align-items:flex-end; gap:14px; }
+.big10 .n{ font-family:var(--disp); font-weight:400; font-size:clamp(88px,29vw,150px); line-height:.78; color:var(--lemon); text-shadow:0 4px 24px rgba(0,10,16,.6); }
+.big10 .t{ font-family:var(--disp); font-weight:400; font-size:clamp(22px,7vw,34px); line-height:.95; padding-bottom:14px; text-shadow:0 2px 16px rgba(0,10,16,.7); }
 .bubbles{ position:absolute; inset:0; z-index:2; overflow:hidden; pointer-events:none; }
 .bubble{ position:absolute; top:0; left:0; border-radius:50%; overflow:hidden;
   border:1.5px solid rgba(255,255,255,.55); backface-visibility:hidden;
@@ -509,7 +518,7 @@ a.ci:active .v.link{ color:var(--aqua); }
 
   <!-- 0 · LANGUAGE -->
   <section class="slide lang" data-label="Language">
-    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+    <div class="media"><img src="assets/lang/hero.jpg" alt="" style="object-position:center top"><div class="grain"></div></div>
     <div class="content langwrap">
       <div class="glasslogo" role="img" aria-label="Bali Skim Gathering 2026">
         <div class="gl-fill"></div><div class="gl-sheen"></div>
@@ -624,8 +633,8 @@ a.ci:active .v.link{ color:var(--aqua); }
     <div class="bubbles" id="bubbles" aria-hidden="true"></div>
     <div class="content gn-split">
       <div class="gn-top">
-        <div class="eyebrow reveal">The Gathering</div>
-        <h2 class="reveal d1">Riders from<br>10+ countries</h2>
+        <div class="eyebrow reveal">The Gathering · riders from</div>
+        <div class="big10 reveal d1"><span class="n">10+</span><span class="t">countries<br>one beach</span></div>
       </div>
       <div class="gn-bottom reveal d2">
         <div class="glass pad gn-facts">
@@ -718,7 +727,7 @@ a.ci:active .v.link{ color:var(--aqua); }
 
   <!-- 5 · CATEGORIES -->
   <section class="slide cats" data-label="Categories">
-    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+    <div class="media"><video src="assets/clips/clip5.mp4" muted loop playsinline preload="auto" style="background:var(--ink)"></video><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
       <div class="eyebrow reveal">Categories &amp; Awards</div>
@@ -829,7 +838,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- 9 · PACKAGES -->
-  <section class="slide packages" data-label="Packages">
+  <section class="slide packages" data-tone="warm" data-label="Packages">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="content">
       <div class="eyebrow reveal">Sponsor packages</div>
@@ -865,7 +874,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- PACKAGE DETAILS · BARREL -->
-  <section class="slide pkgd" data-label="Barrel details">
+  <section class="slide pkgd" data-tone="sunny" data-label="Barrel details">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="content">
       <div class="eyebrow reveal">Package Details</div>
@@ -890,7 +899,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- PACKAGE DETAILS · SHOREBREAK -->
-  <section class="slide pkgd" data-label="Shorebreak details">
+  <section class="slide pkgd" data-tone="warm" data-label="Shorebreak details">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="content">
       <div class="eyebrow reveal">Package Details</div>
@@ -909,7 +918,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- PACKAGE DETAILS · FLATS + GROMS -->
-  <section class="slide pkgd" data-label="Flats &amp; Groms details">
+  <section class="slide pkgd" data-tone="sunny" data-label="Flats &amp; Groms details">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="content">
       <div class="eyebrow reveal">Package Details</div>
@@ -937,7 +946,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- 10 · CATEGORY SPONSORS -->
-  <section class="slide catsp" data-label="Category sponsors">
+  <section class="slide catsp" data-tone="warm" data-label="Category sponsors">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
@@ -952,7 +961,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- ADD-ONS · NAMED MOMENTS -->
-  <section class="slide moments" data-label="Named moments">
+  <section class="slide moments" data-tone="sunny" data-label="Named moments">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
@@ -966,7 +975,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- ADD-ONS · IN-KIND -->
-  <section class="slide inkind" data-label="In-kind">
+  <section class="slide inkind" data-tone="warm" data-label="In-kind">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
@@ -1065,32 +1074,40 @@ deck.addEventListener('scroll',()=>{
   bar.style.width=(max? deck.scrollTop/max*100 : 0)+'%';
 },{passive:true});
 
-// ---- country bubbles: float + collide ----
+// ---- country bubbles: float + collide, bounded to a band ----
 (function(){
   const wrap=document.getElementById('bubbles'); if(!wrap) return;
   const slide=wrap.closest('.slide');
-  const data=[["Philippines","ph",64],["Japan","jp",58],["Korea","kr",50],["Taiwan","tw",46],
-    ["Hong Kong","hk",52],["Thailand","th",60],["Malaysia","my",48],["Singapore","sg",44],
-    ["Australia","au",62],["France","fr",54],["Finland","fi",47],["Brazil","br",56]];
+  const data=[["Philippines","ph",52],["Japan","jp",46],["Korea","kr",40],["Taiwan","tw",36],
+    ["Hong Kong","hk",42],["Thailand","th",48],["Malaysia","my",38],["Singapore","sg",34],
+    ["Australia","au",50],["France","fr",44],["Finland","fi",37],["Brazil","br",45]];
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let W=wrap.clientWidth, H=wrap.clientHeight, B=[], raf=0, running=false;
+  let W=0,H=0,fTop=0,fBot=0, B=[], raf=0, running=false;
 
   data.forEach(([name,code,r])=>{
     const el=document.createElement('div'); el.className='bubble';
     el.style.width=el.style.height=(r*2)+'px';
     el.innerHTML='<img class="bflag" src="assets/flags/'+code+'.svg" alt=""><span class="bname">'+name+'</span><span class="bshine"></span>';
-    wrap.appendChild(el);
-    B.push({el,r,x:0,y:0,vx:0,vy:0});
+    wrap.appendChild(el); B.push({el,r,x:0,y:0,vx:0,vy:0});
   });
 
+  function bounds(){
+    const cr=wrap.getBoundingClientRect(); W=cr.width; H=cr.height;
+    const head=slide.querySelector('.big10'); const panel=slide.querySelector('.gn-bottom .glass')||slide.querySelector('.gn-bottom');
+    const hb=head.getBoundingClientRect(); const pb=panel.getBoundingClientRect();
+    fTop=(hb.bottom-cr.top)+10;
+    fBot=(pb.top-cr.top)+pb.height*0.34;   // bubbles may fall 1/3 into the bottom panel
+  }
+  function yLo(r){ return fTop+r; }
+  function yHi(r){ return Math.max(fTop+r, fBot-r); }
   function place(){
-    W=wrap.clientWidth; H=wrap.clientHeight;
+    bounds();
     B.forEach(b=>{
-      let ok=false,tries=0;
-      while(!ok && tries++<80){
-        b.x=b.r+Math.random()*(W-2*b.r); b.y=b.r+Math.random()*(H-2*b.r); ok=true;
-        for(const o of B){ if(o===b||o.x===0&&o.y===0) continue;
-          const dx=o.x-b.x,dy=o.y-b.y; if(Math.hypot(dx,dy)<b.r+o.r+6){ok=false;break;} }
+      let ok=false,t=0;
+      while(!ok && t++<90){
+        b.x=b.r+Math.random()*(W-2*b.r);
+        b.y=yLo(b.r)+Math.random()*Math.max(1,(yHi(b.r)-yLo(b.r))); ok=true;
+        for(const o of B){ if(o===b||(o.x===0&&o.y===0))continue; if(Math.hypot(o.x-b.x,o.y-b.y)<b.r+o.r+5){ok=false;break;} }
       }
       const a=Math.random()*Math.PI*2, sp=reduce?0:(0.25+Math.random()*0.5);
       b.vx=Math.cos(a)*sp; b.vy=Math.sin(a)*sp;
@@ -1098,34 +1115,30 @@ deck.addEventListener('scroll',()=>{
     });
   }
   function step(){
+    bounds();
     for(const b of B){
       b.x+=b.vx; b.y+=b.vy;
       if(b.x<b.r){b.x=b.r;b.vx=-b.vx;} if(b.x>W-b.r){b.x=W-b.r;b.vx=-b.vx;}
-      if(b.y<b.r){b.y=b.r;b.vy=-b.vy;} if(b.y>H-b.r){b.y=H-b.r;b.vy=-b.vy;}
+      const lo=yLo(b.r),hi=yHi(b.r);
+      if(b.y<lo){b.y=lo;b.vy=-b.vy;} if(b.y>hi){b.y=hi;b.vy=-b.vy;}
     }
     for(let i=0;i<B.length;i++) for(let j=i+1;j<B.length;j++){
-      const a=B[i],c=B[j]; let dx=c.x-a.x,dy=c.y-a.y; let d=Math.hypot(dx,dy)||0.001;
-      const min=a.r+c.r;
-      if(d<min){
-        const nx=dx/d,ny=dy/d, ov=(min-d)/2;
-        a.x-=nx*ov; a.y-=ny*ov; c.x+=nx*ov; c.y+=ny*ov;
+      const a=B[i],c=B[j]; let dx=c.x-a.x,dy=c.y-a.y; let d=Math.hypot(dx,dy)||0.001; const min=a.r+c.r;
+      if(d<min){ const nx=dx/d,ny=dy/d, ov=(min-d)/2; a.x-=nx*ov;a.y-=ny*ov;c.x+=nx*ov;c.y+=ny*ov;
         const dvx=c.vx-a.vx,dvy=c.vy-a.vy, dot=dvx*nx+dvy*ny;
-        if(dot<0){ const mi=a.r*a.r,mj=c.r*c.r, p=2*dot/(mi+mj);
-          a.vx+=p*mj*nx; a.vy+=p*mj*ny; c.vx-=p*mi*nx; c.vy-=p*mi*ny; }
-      }
+        if(dot<0){ const mi=a.r*a.r,mj=c.r*c.r, p=2*dot/(mi+mj); a.vx+=p*mj*nx;a.vy+=p*mj*ny;c.vx-=p*mi*nx;c.vy-=p*mi*ny; } }
     }
-    for(const b of B){ // gentle speed clamp
-      const sp=Math.hypot(b.vx,b.vy); if(sp>1.1){b.vx*=1.1/sp;b.vy*=1.1/sp;}
-      b.el.style.transform='translate3d('+(b.x-b.r)+'px,'+(b.y-b.r)+'px,0)';
-    }
+    for(const b of B){ const sp=Math.hypot(b.vx,b.vy); if(sp>1.1){b.vx*=1.1/sp;b.vy*=1.1/sp;}
+      b.el.style.transform='translate3d('+(b.x-b.r)+'px,'+(b.y-b.r)+'px,0)'; }
     if(running) raf=requestAnimationFrame(step);
   }
-  function start(){ if(running||reduce) return; running=true; raf=requestAnimationFrame(step); }
+  function start(){ if(running||reduce)return; bounds(); running=true; raf=requestAnimationFrame(step); }
   function stop(){ running=false; cancelAnimationFrame(raf); }
-
-  place();
-  new ResizeObserver(()=>{ place(); }).observe(wrap);
-  new IntersectionObserver((es)=>{ es.forEach(e=> e.isIntersecting?start():stop()); },{threshold:.2}).observe(slide);
+  // measure after fonts load so the big headline height is final
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(place); } else { setTimeout(place,400); }
+  setTimeout(place,600);
+  new ResizeObserver(()=>place()).observe(wrap);
+  new IntersectionObserver((es)=>{es.forEach(e=>e.isIntersecting?start():stop());},{threshold:.2}).observe(slide);
 })();
 
 </script>
