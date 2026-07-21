@@ -313,6 +313,27 @@ p.lead + p.lead{ margin-top:14px; }
 .contact .crow span{ font-size:13.5px; color:rgba(241,236,224,.9); }
 
 
+
+/* ---------- the gathering ---------- */
+.pills{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+.pills span{ font-family:var(--data); font-size:11px; letter-spacing:.03em; padding:5px 9px; border-radius:999px;
+  background:rgba(56,214,194,.14); border:1px solid rgba(56,214,194,.32); color:#eafffb; }
+.facts{ display:flex; flex-direction:column; gap:8px; }
+.facts .f{ font-size:13.5px; line-height:1.3; color:rgba(241,236,224,.92); display:flex; gap:9px; align-items:baseline; }
+.facts .f b{ color:var(--lemon); font-family:var(--data); font-size:11px; letter-spacing:.06em; white-space:nowrap; flex:none; }
+
+/* ---------- package details ---------- */
+.pd-head{ margin-bottom:14px; }
+.pd-name{ font-family:var(--disp); font-weight:400; font-size:clamp(34px,10vw,52px); line-height:.95; }
+.pd-price{ font-family:var(--data); font-size:13px; letter-spacing:.06em; color:var(--aqua); margin-top:6px; text-transform:uppercase; }
+.subhead{ font-family:var(--data); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(241,236,224,.55); margin:2px 0 8px; }
+.subhead + .subhead, .deliv + .subhead{ margin-top:14px; }
+.deliv{ list-style:none; display:flex; flex-direction:column; gap:7px; }
+.deliv li{ display:flex; gap:9px; font-size:13px; line-height:1.32; color:rgba(241,236,224,.92); }
+.deliv li::before{ content:"✓"; color:var(--aqua); font-weight:700; font-size:12px; flex:none; line-height:1.4; }
+.deliv li b{ color:var(--lemon); font-weight:600; }
+.pd-two{ display:flex; flex-direction:column; gap:12px; }
+
 /* ---------- let's discuss (left panel, links) ---------- */
 .slide.discuss .content{ max-width:min(66vw,330px); margin:0; align-items:flex-start; }
 .slide.discuss .glasslogo{ width:100%; max-width:188px; }
@@ -548,6 +569,40 @@ a.ci:active .v.link{ color:var(--aqua); }
     </div>
   </section>
 
+  <!-- THE GATHERING -->
+  <section class="slide gather" data-label="The Gathering">
+    <div class="media"><img src="assets/content/trick-wave.jpg" alt="" style="object-position:center 38%"><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="eyebrow reveal">The Gathering</div>
+      <h2 class="reveal d1">Indonesia's<br>first</h2>
+      <div class="glass pad reveal d2">
+        <p class="lead">Across Asia every skim country runs its annual gathering — Thailand, Malaysia, Taiwan. Indonesia never had one. Bali Skim Gathering is the first: a new fixture in Asia's skim calendar, every September.</p>
+        <p class="lead" style="margin-top:12px"><span class="spark">You're not backing an event — you're founding a tradition.</span> Year-one partners keep the founding story for as long as the Gathering runs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE GATHERING · NUMBERS -->
+  <section class="slide gathernum" data-label="By the numbers">
+    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="eyebrow reveal">The Gathering · by the numbers</div>
+      <h2 class="reveal d1">50–80 riders,<br>10+ countries</h2>
+      <div class="glass pad reveal d2">
+        <div class="pills">
+          <span>Philippines</span><span>Japan</span><span>Korea</span><span>Taiwan</span><span>Hong Kong</span><span>Thailand</span><span>Malaysia</span><span>Singapore</span><span>Australia</span><span>France</span><span>Finland</span><span>Brazil</span>
+        </div>
+        <div class="facts">
+          <div class="f"><b>5 CATS</b><span>competition categories — under 12 to masters 40+</span></div>
+          <div class="f"><b>FREE</b><span>for spectators — no ticket, no invitation</span></div>
+          <div class="f"><b>BERAWA</b><span>one of Canggu's most-visited stretches of sand</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 4 · RIDERS INTRO -->
   <section class="slide rintro" data-label="The riders">
     <div class="media"><video src="assets/riders/crew.mp4" muted loop playsinline preload="auto" style="transform:translateY(-15%) scale(1.32);transform-origin:center;background:var(--ink)"></video><div class="grain"></div></div>
@@ -770,6 +825,78 @@ a.ci:active .v.link{ color:var(--aqua); }
           <div class="k" style="font-size:18px">In-kind</div>
           <div class="price">rooms · prizes · F&amp;B</div>
           <div class="slot">As valuable as cash.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGE DETAILS · BARREL -->
+  <section class="slide pkgd" data-label="Barrel details">
+    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+    <div class="content">
+      <div class="eyebrow reveal">Package Details</div>
+      <div class="pd-head reveal d1"><div class="pd-name">Barrel</div><div class="pd-price">20 jt · title partner · 1 slot</div></div>
+      <div class="glass pad reveal d2">
+        <div class="subhead">Naming &amp; media</div>
+        <ul class="deliv">
+          <li><b>Naming</b> — "Bali Skim Gathering presented by ___" on all materials, MC &amp; recap film</li>
+          <li>Pro category named after you</li>
+          <li>IG feed posts — pre / on / post (3+)</li>
+          <li>Logo opens the recap film · named in all rider interviews</li>
+        </ul>
+        <div class="subhead">On the beach</div>
+        <ul class="deliv">
+          <li>Logo on entrance gate &amp; podium backdrop</li>
+          <li><b>10</b> beach flags · off-site banners (Berawa / Canggu / Raya)</li>
+          <li>Booth 3×3 · product in 50–80 rider gift bags</li>
+          <li>MC mentions every session</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGE DETAILS · SHOREBREAK -->
+  <section class="slide pkgd" data-label="Shorebreak details">
+    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+    <div class="content">
+      <div class="eyebrow reveal">Package Details</div>
+      <div class="pd-head reveal d1"><div class="pd-name">Shorebreak</div><div class="pd-price">10 jt · 2 slots</div></div>
+      <div class="glass pad reveal d2">
+        <ul class="deliv">
+          <li>One category named after you — <b>Women / Amateur / Masters</b></li>
+          <li>IG feed posts — pre / on / post (3)</li>
+          <li>Logo on podium backdrop</li>
+          <li><b>4</b> beach flags · booth 3×3</li>
+          <li>Product in rider gift bags</li>
+          <li>MC mentions — opening, your category, closing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGE DETAILS · FLATS + GROMS -->
+  <section class="slide pkgd" data-label="Flats &amp; Groms details">
+    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+    <div class="content">
+      <div class="eyebrow reveal">Package Details</div>
+      <div class="pd-two">
+        <div>
+          <div class="pd-head reveal d1"><div class="pd-name" style="font-size:34px">Flats</div><div class="pd-price">5 jt</div></div>
+          <div class="glass pad reveal d2">
+            <ul class="deliv">
+              <li>IG feed posts — group pre / post (2)</li>
+              <li><b>2</b> beach flags · logo on barricade line</li>
+              <li>Product in rider gift bags · MC opening &amp; closing</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="pd-head reveal d2"><div class="pd-name" style="font-size:34px">Groms</div><div class="pd-price">2.5 jt</div></div>
+          <div class="glass pad reveal d3">
+            <ul class="deliv">
+              <li>Group IG post · <b>1</b> beach flag · MC opening &amp; closing</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
