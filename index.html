@@ -6,7 +6,7 @@
 <title>Bali Skim Gathering — Sponsorship</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#04212e;
@@ -21,11 +21,10 @@
   --glass-border: rgba(255,255,255,.28);
 
   --pad: clamp(20px, 5.5vw, 40px);
-  --disp: display, 'Bricolage Grotesque', system-ui, sans-serif;
+  --disp: 'Bagel Fat One', system-ui, sans-serif;
   --body: 'Inter', system-ui, sans-serif;
   --data: 'Space Grotesk', ui-monospace, monospace;
 }
-@font-face{ font-family:display; src:local('Bricolage Grotesque'); } /* fallback alias */
 
 *{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
 html,body{ height:100%; }
@@ -128,7 +127,7 @@ body{
 }
 .eyebrow::before{ content:""; width:22px; height:1px; background:var(--aqua); opacity:.7; }
 
-h1,h2{ font-family:var(--disp); font-weight:700; line-height:.92; letter-spacing:-.02em; }
+h1,h2{ font-family:var(--disp); font-weight:400; line-height:.98; letter-spacing:.01em; }
 h1{ font-size:clamp(46px, 13vw, 92px); text-transform:uppercase; }
 h1 em{ font-style:normal; color:var(--aqua); display:block; }
 h2{ font-size:clamp(32px, 8.5vw, 60px); margin-bottom:18px; }
@@ -176,7 +175,7 @@ p.lead + p.lead{ margin-top:14px; }
 }
 .rider .photo .tag{ position:absolute; top:12px; left:12px; }
 .rider .meta{ padding:20px 22px 24px; }
-.rider .name{ font-family:var(--disp); font-weight:700; font-size:30px; line-height:1; letter-spacing:-.01em; }
+.rider .name{ font-family:var(--disp); font-weight:400; font-size:26px; line-height:1; letter-spacing:-.01em; }
 .rider .brand{ font-family:var(--data); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--aqua); margin-top:6px; }
 .rider ul{ list-style:none; margin-top:16px; display:flex; flex-direction:column; gap:9px; }
 .rider li{ font-size:14px; color:rgba(241,236,224,.86); display:flex; gap:10px; align-items:baseline; }
@@ -187,7 +186,7 @@ p.lead + p.lead{ margin-top:14px; }
 .pkgs{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px; }
 .pkg{ padding:18px 16px 20px; border-radius:20px; }
 .pkg.hero{ grid-column:1 / -1; border:1px solid rgba(255,176,32,.4); }
-.pkg .k{ font-family:var(--disp); font-weight:700; font-size:22px; letter-spacing:.01em; }
+.pkg .k{ font-family:var(--disp); font-weight:400; font-size:20px; letter-spacing:.01em; }
 .pkg.hero .k{ font-size:30px; color:var(--sun); }
 .pkg .price{ font-family:var(--data); font-size:13px; letter-spacing:.06em; color:var(--aqua); margin-top:4px; }
 .pkg .slot{ font-size:12px; color:rgba(241,236,224,.6); margin-top:10px; }
@@ -208,8 +207,9 @@ p.lead + p.lead{ margin-top:14px; }
 .dots b{ width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.3); transition:.3s; cursor:pointer; }
 .dots b.on{ background:var(--aqua); transform:scale(1.5); box-shadow:0 0 8px var(--aqua); }
 
+.slide[data-label="Cover"] .content{ margin-bottom:56px; }
 .scrollhint{
-  position:absolute; left:50%; bottom:calc(20px + env(safe-area-inset-bottom)); z-index:5;
+  position:absolute; left:50%; bottom:calc(14px + env(safe-area-inset-bottom)); z-index:5;
   transform:translateX(-50%); font-family:var(--data); font-size:10px; letter-spacing:.2em;
   text-transform:uppercase; color:rgba(255,255,255,.55); display:flex; flex-direction:column;
   align-items:center; gap:6px; animation:bob 2.4s ease-in-out infinite;
@@ -231,7 +231,7 @@ p.lead + p.lead{ margin-top:14px; }
   display:flex; flex-direction:column; align-items:flex-start; gap:18px;
 }
 .presents{ display:flex; align-items:center; gap:10px; }
-.mikword{ height:14px; width:auto; display:block; opacity:.95; }
+.mikword{ height:28px; width:auto; display:block; opacity:.95; }
 .glasslogo{
   position:relative; width:min(66vw, 420px); aspect-ratio:1329/966;
   filter:drop-shadow(0 18px 34px rgba(2,16,24,.55));
@@ -297,7 +297,7 @@ p.lead + p.lead{ margin-top:14px; }
       </div>
     </div>
     <div class="content">
-      <p class="lead reveal d2">12–13 September 2026 · Pantai Berawa, Canggu</p>
+      <p class="reveal d2" style="font-family:var(--disp);font-size:clamp(22px,6.4vw,34px);line-height:1.12;color:var(--foam)">12–13 September 2026<br><span style="color:var(--aqua)">Pantai Berawa · Canggu</span></p>
       <p class="lead reveal d3" style="color:var(--aqua);font-weight:600">The first international skimboarding gathering in Indonesia.</p>
     </div>
     <div class="scrollhint">Scroll<span></span></div>
