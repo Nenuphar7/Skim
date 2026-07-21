@@ -244,12 +244,12 @@ p.lead + p.lead{ margin-top:14px; }
 .slide.lang .glasslogo{ width:min(54vw,300px); }
 .langlabel{ font-family:var(--data); font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:#fff; text-shadow:0 2px 12px rgba(0,10,16,.6); }
 .langbtns{ display:flex; flex-direction:column; gap:10px; width:100%; max-width:290px; }
-.langbtn{ font-family:var(--disp); font-weight:400; font-size:20px; line-height:1; padding:15px 20px; border-radius:16px;
+.langbtn{ font-family:var(--disp); font-weight:400; font-size:20px; line-height:1; padding:16px 22px; border-radius:999px;
   border:1px solid rgba(255,255,255,.4); background:rgba(255,255,255,.12); backdrop-filter:blur(14px) saturate(180%); 
   -webkit-backdrop-filter:blur(14px) saturate(180%); color:#fff; cursor:pointer; transition:transform .15s ease;
   box-shadow:inset 0 1px 1px rgba(255,255,255,.5), 0 10px 24px -10px rgba(0,10,20,.6); }
 .langbtn:hover{ transform:translateY(-1px); }
-.langbtn.active{ background:linear-gradient(135deg,var(--aqua),var(--teal)); color:#04212e; border-color:transparent; }
+.langbtn.active{ background:rgba(255,255,255,.16); color:#fff; border-color:rgba(56,214,194,.85); box-shadow:inset 0 1px 1px rgba(255,255,255,.55), 0 0 0 1px rgba(56,214,194,.35), 0 12px 26px -10px rgba(0,10,20,.6); }
 .langbtn[disabled]{ opacity:.42; cursor:not-allowed; }
 .langbtn small{ display:block; font-family:var(--data); font-size:9px; letter-spacing:.18em; text-transform:uppercase; margin-top:3px; color:var(--aqua); }
 .fsbtn{ font-family:var(--data); font-size:11px; letter-spacing:.14em; text-transform:uppercase; padding:11px 20px; border-radius:999px;
@@ -387,7 +387,10 @@ p.lead + p.lead{ margin-top:14px; }
 .disc-line{ margin-top:12px; white-space:nowrap; overflow:visible; opacity:.92;
   text-shadow:0 2px 10px rgba(4,16,24,.55), 0 1px 3px rgba(4,16,24,.45); }
 
-.slide.discuss .glasslogo{ display:block; width:min(60vw,248px); margin:-26px auto 10px; align-self:center; }
+.slide.discuss .glasslogo{ display:block; width:min(60vw,248px); margin:-64px auto 12px; align-self:center; }
+.slide.discuss .glasslogo .gl-fill{ backdrop-filter:blur(5px) saturate(170%) brightness(1.12); -webkit-backdrop-filter:blur(5px) saturate(170%) brightness(1.12); background:none; }
+.slide.discuss .glasslogo .gl-sheen{ display:none; }
+.slide.discuss .disc-line{ color:#fff; }
 .slide.discuss .eyebrow{ white-space:nowrap; text-shadow:0 2px 10px rgba(2,14,22,.6); }
 .contact{ display:flex; flex-direction:column; gap:13px; }
 .ci{ display:block; text-decoration:none; }
@@ -525,7 +528,7 @@ a.ci:active .v.link{ color:var(--aqua); }
 <main class="deck" id="deck">
 
   <!-- 0 · LANGUAGE -->
-  <section class="slide lang" data-tone="warm" data-label="Language">
+  <section class="slide lang" data-label="Language">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="content langwrap">
       <div class="glasslogo" role="img" aria-label="Bali Skim Gathering 2026">
@@ -719,7 +722,7 @@ a.ci:active .v.link{ color:var(--aqua); }
 
   <!-- 4d · ANTON -->
   <section class="slide rslide" data-label="Anton">
-    <div class="media"><img src="assets/riders/anton.jpg" alt="" style="object-position:center 42%"><div class="grain"></div></div>
+    <div class="media"><img src="assets/riders/anton.jpg" alt="" style="object-position:center"><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
       <div class="glass rcard reveal">
@@ -764,7 +767,7 @@ a.ci:active .v.link{ color:var(--aqua); }
         <div class="tl">
           <div><b>FRI 11</b><span>Check-in · test rides · welcome night</span></div>
           <div><b>SAT 12</b><span>Qualifiers · sunset session + live music</span></div>
-          <div><b>SUN 13</b><span>Finals · 15 podiums · closing party</span></div>
+          <div><b>SUN 13</b><span>Finals · 15 winners awarded · closing party</span></div>
         </div>
         <p class="lead" style="margin-top:14px;font-size:14px"><span class="spark">Friday check-in puts brands on the beach for three days, not two</span> — included at no extra cost.</p>
       </div>
@@ -846,7 +849,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- 9 · PACKAGES -->
-  <section class="slide packages" data-tone="warm" data-label="Packages">
+  <section class="slide packages" data-label="Packages">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="content">
       <div class="eyebrow reveal">Sponsor packages</div>
@@ -983,14 +986,14 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- ADD-ONS · IN-KIND -->
-  <section class="slide inkind" data-tone="warm" data-label="In-kind">
+  <section class="slide inkind" data-label="In-kind">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
       <div class="eyebrow reveal">In-kind partnerships</div>
       <h2 class="reveal d1">As valuable<br>as cash</h2>
       <div class="glass pad reveal d2">
-        <div class="moment"><span class="micon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M4 18v-5h11a4 4 0 0 1 4 4v1M4 13V7M4 18h16"/><circle cx="8" cy="10.5" r="1.4"/></svg></span><div class="mtxt"><div class="mname">Accommodation</div><div class="mdesc">rooms for visiting riders — hotel / surf camp / guesthouse</div></div><span class="mtag lvl">Shorebreak-level</span></div><div class="moment"><span class="micon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M8 4h8v3.5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5.5a2 2 0 0 0 2.2 3M16 6h2.5a2 2 0 0 1-2.2 3M10 14h4v3h-4zM8 20h8"/></svg></span><div class="mtxt"><div class="mname">Prize partner</div><div class="mdesc">boards, wetsuits, bags, apparel for 15 podiums</div></div><span class="mtag lvl">Flats-level</span></div><div class="moment"><span class="micon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M6 9h11v4.5a4.5 4.5 0 0 1-4.5 4.5H10.5A4.5 4.5 0 0 1 6 13.5V9Z"/><path d="M17 10h2a2 2 0 0 1 0 4h-2M9 4v2M12 4v2"/></svg></span><div class="mtxt"><div class="mname">F&B partner</div><div class="mdesc">food &amp; drinks for riders and crew</div></div><span class="mtag lvl">Flats-level</span></div><div class="moment"><span class="micon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="3" y="7.5" width="18" height="11" rx="2"/><circle cx="12" cy="13" r="2.8"/><path d="M8.5 7.5L10 5.5h4l1.5 2"/></svg></span><div class="mtxt"><div class="mname">Media partner</div><div class="mdesc">coverage &amp; content distribution</div></div><span class="mtag lvl">Flats-level</span></div>
+        <div class="moment"><span class="micon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M4 18v-5h11a4 4 0 0 1 4 4v1M4 13V7M4 18h16"/><circle cx="8" cy="10.5" r="1.4"/></svg></span><div class="mtxt"><div class="mname">Accommodation</div><div class="mdesc">rooms for visiting riders — hotel / surf camp / guesthouse</div></div><span class="mtag lvl">Shorebreak-level</span></div><div class="moment"><span class="micon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M8 4h8v3.5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5.5a2 2 0 0 0 2.2 3M16 6h2.5a2 2 0 0 1-2.2 3M10 14h4v3h-4zM8 20h8"/></svg></span><div class="mtxt"><div class="mname">Prize partner</div><div class="mdesc">boards, wetsuits, bags, apparel for 15 winners</div></div><span class="mtag lvl">Flats-level</span></div><div class="moment"><span class="micon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M6 9h11v4.5a4.5 4.5 0 0 1-4.5 4.5H10.5A4.5 4.5 0 0 1 6 13.5V9Z"/><path d="M17 10h2a2 2 0 0 1 0 4h-2M9 4v2M12 4v2"/></svg></span><div class="mtxt"><div class="mname">F&B partner</div><div class="mdesc">food &amp; drinks for riders and crew</div></div><span class="mtag lvl">Flats-level</span></div><div class="moment"><span class="micon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="3" y="7.5" width="18" height="11" rx="2"/><circle cx="12" cy="13" r="2.8"/><path d="M8.5 7.5L10 5.5h4l1.5 2"/></svg></span><div class="mtxt"><div class="mname">Media partner</div><div class="mdesc">coverage &amp; content distribution</div></div><span class="mtag lvl">Flats-level</span></div>
         <div class="note">In-kind partners receive <b>Flats-level</b> visibility; the accommodation partner receives <b>Shorebreak-level</b>.</div>
       </div>
     </div>
@@ -1090,7 +1093,7 @@ deck.addEventListener('scroll',()=>{
     ["Hong Kong","hk",42],["Thailand","th",48],["Malaysia","my",38],["Singapore","sg",34],
     ["Australia","au",50],["France","fr",44],["Finland","fi",37],["Brazil","br",45]];
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let W=0,H=0,fTop=0,fBot=0, B=[], raf=0, running=false;
+  let W=0,H=0,fTop=0,fBot=0, B=[], raf=0, running=false, placed=false;
 
   data.forEach(([name,code,r])=>{
     const el=document.createElement('div'); el.className='bubble';
@@ -1123,7 +1126,6 @@ deck.addEventListener('scroll',()=>{
     });
   }
   function step(){
-    bounds();
     for(const b of B){
       b.x+=b.vx; b.y+=b.vy;
       if(b.x<b.r){b.x=b.r;b.vx=-b.vx;} if(b.x>W-b.r){b.x=W-b.r;b.vx=-b.vx;}
@@ -1143,9 +1145,8 @@ deck.addEventListener('scroll',()=>{
   function start(){ if(running||reduce)return; bounds(); running=true; raf=requestAnimationFrame(step); }
   function stop(){ running=false; cancelAnimationFrame(raf); }
   // measure after fonts load so the big headline height is final
-  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(place); } else { setTimeout(place,400); }
-  setTimeout(place,600);
-  new ResizeObserver(()=>place()).observe(wrap);
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(()=>{place();placed=true;}); } else { setTimeout(()=>{place();placed=true;},400); }
+  new ResizeObserver(()=>{ bounds(); place(); }).observe(wrap);
   new IntersectionObserver((es)=>{es.forEach(e=>{ if(e.isIntersecting){ if(!placed){place();placed=true;} start(); } else stop(); });},{threshold:.2}).observe(slide);
 })();
 
