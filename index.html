@@ -208,6 +208,15 @@ p.lead + p.lead{ margin-top:14px; }
 .rintro h2{ margin-bottom:16px; }
 
 /* ---------- rider slides ---------- */
+
+/* ---------- story ---------- */
+.story .content{ position:relative; }
+.storychip{ position:absolute; top:-52px; right:4px; width:88px; height:112px; border-radius:16px; overflow:hidden;
+  border:1px solid rgba(255,255,255,.4); box-shadow:0 14px 26px -10px rgba(2,16,24,.75); transform:rotate(3deg); z-index:4; }
+.storychip img{ width:100%; height:100%; object-fit:cover; }
+.storychip figcaption{ position:absolute; left:0; right:0; bottom:0; font-family:var(--data); font-size:8px; letter-spacing:.12em;
+  text-transform:uppercase; text-align:center; padding:3px; background:rgba(4,20,28,.6); color:var(--aqua); }
+
 /* ---------- progress rail ---------- */
 .rail{
   position:fixed; top:0; left:0; right:0; z-index:20; height:3px;
@@ -340,7 +349,7 @@ p.lead + p.lead{ margin-top:14px; }
 
   <!-- 2 · WHAT IS SKIM -->
   <section class="slide" data-label="The sport">
-    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div><div class="tag">▶ skim run, slow-mo</div></div>
+    <div class="media"><video src="assets/clips/clip1.mp4" muted loop playsinline preload="metadata"></video><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
       <div class="eyebrow reveal">What is skimboarding</div>
@@ -352,23 +361,49 @@ p.lead + p.lead{ margin-top:14px; }
     </div>
   </section>
 
-  <!-- 3 · STORY -->
-  <section class="slide story" data-label="The story" data-tone="warm">
-    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div><div class="tag">▶ workshop · boards · school</div></div>
+  <!-- 3 · STORY (origin) -->
+  <section class="slide story" data-label="The story">
+    <div class="media"><img src="assets/story/tommy.jpg" alt="" style="object-position:center 28%"><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
       <div class="eyebrow reveal">The story — Tommy &amp; MIK</div>
       <h2 class="reveal d1">Built from<br>scratch, by hand</h2>
       <div class="glass pad reveal d2">
         <p class="lead">Tommy grew up on a mining island with no surf. As a merchant sailor he saw the world's beaches — then found waves back home nobody rode, until he typed his shore break into Google and taught himself to skim.</p>
-        <p class="lead">Today MIK is a board workshop and shop in Canggu, a skim school for local and visiting kids, and a small beach kitchen making milkshakes for surfers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3b · STORY (MIK today) -->
+  <section class="slide story" data-label="MIK today">
+    <div class="media"><img src="assets/story/workshop.jpg" alt="" style="object-position:center 42%"><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <figure class="storychip reveal"><img src="assets/story/shaping.jpg" alt=""><figcaption>the shape room</figcaption></figure>
+      <div class="eyebrow reveal">MIK today</div>
+      <h2 class="reveal d1">Boards, lessons,<br>milkshakes</h2>
+      <div class="glass pad reveal d2">
+        <p class="lead">A board workshop and shop in Canggu, a skim school where local and visiting kids learn the sport, and a small beach kitchen making milkshakes for surfers. <span class="spark">Built from scratch.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3c · STORY (why the gathering) -->
+  <section class="slide story" data-label="Why the Gathering">
+    <div class="media"><img src="assets/story/kids.jpg" alt="" style="object-position:center 40%"><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="eyebrow reveal">Why the Gathering</div>
+      <h2 class="reveal d1">Show Bali<br>the sport</h2>
+      <div class="glass pad reveal d2">
+        <p class="lead">Skimboarding barely exists in Indonesia — a handful of riders on an island with thousands of kilometers of perfect skim beaches. The Gathering changes that: <span class="spark">showing the sport to Bali's kids, families, and beach crowd</span> — with the best riders in Asia doing the showing.</p>
       </div>
     </div>
   </section>
 
   <!-- 4 · RIDERS INTRO -->
   <section class="slide rintro" data-label="The riders">
-    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+    <div class="media"><img src="assets/riders/krabi.jpg" alt="" style="object-position:center 30%"><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
       <div class="eyebrow reveal">The riders</div>
