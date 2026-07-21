@@ -523,6 +523,72 @@ a.ci:active .v.link{ color:var(--aqua); }
   .content{ max-width:720px; }
   .slide.center .content{ text-align:left; }
 }
+
+/* ===================== DESKTOP SCALE-UP (min-width:900px) ===================== */
+@media (min-width:900px){
+  .sonny-img{ object-position:center 78% !important; }
+  /* generic glass card + text bump for info slides */
+  .slide.weekend .glass, .slide.crowd .glass, .slide.moments .glass, .slide.inkind .glass,
+  .slide.catsp .glass, .slide.pkgd .glass, .slide.gather .glass, .slide.gathernum .glass,
+  .slide.cats .glass{ padding:34px 36px; border-radius:28px; }
+  .slide.weekend .content, .slide.crowd .content, .slide.moments .content, .slide.inkind .content,
+  .slide.pkgd .content, .slide.gather .content{ max-width:760px; }
+  .slide.weekend h2, .slide.crowd h2, .slide.moments h2, .slide.inkind h2, .slide.gather h2{ font-size:64px; }
+  .slide.weekend .lead, .slide.crowd .lead, .slide.moments .note, .slide.inkind .note,
+  .slide.gather .lead{ font-size:19px; line-height:1.5; }
+  .slide.weekend .tl b{ font-size:15px; width:64px; } .slide.weekend .tl span{ font-size:19px; }
+  .slide.crowd .stat b{ font-size:38px; } .slide.crowd .stat span{ font-size:13px; }
+  .slide.moments .mtxt .mname, .slide.inkind .mtxt .mname{ font-size:20px; }
+  .slide.moments .mtxt .mdesc, .slide.inkind .mtxt .mdesc{ font-size:15px; }
+  .slide.moments .micon, .slide.inkind .micon{ width:32px; height:32px; }
+  .slide.moments .mtag, .slide.inkind .mtag{ font-size:12px; }
+
+  /* categories — big central card */
+  .slide.cats .content{ max-width:760px; margin:0 auto; }
+  .slide.cats h2{ font-size:66px; }
+  .slide.cats .glass{ padding:40px 44px; }
+  .slide.cats .catlist b{ font-size:30px; } .slide.cats .catlist .cm{ font-size:14px; }
+  .slide.cats .catlist li{ padding:15px 0; gap:16px; } .slide.cats .cicon{ width:30px; height:30px; }
+  .slide.cats .bestwipe{ font-size:15px; padding:14px 16px; }
+
+  /* the gathering — bump 50–80 riders headline */
+  .slide.gathernum .big10 .n{ font-size:190px; }
+  .slide.gathernum .big10 .t{ font-size:44px; padding-bottom:22px; }
+  .slide.gathernum .eyebrow{ font-size:18px; }
+  .slide.gathernum .gn-facts{ padding:20px 24px; } .slide.gathernum .gn-facts span{ font-size:17px; }
+  .slide.gathernum .gn-facts b{ font-size:26px; }
+
+  /* package details / category sponsor — bigger */
+  .slide.pkgd .pd-name{ font-size:66px; } .slide.pkgd .pd-price{ font-size:16px; }
+  .slide.pkgd .deliv li{ font-size:17px; } .slide.pkgd .subhead{ font-size:12px; }
+  .slide.catsp .content{ max-width:760px; }
+  .slide.catsp h2{ font-size:66px; }
+  .slide.catsp .cs-feature{ width:300px; height:380px; }   /* woman photo ~2x */
+  .slide.catsp .lead{ font-size:19px; line-height:1.5; }
+
+  /* space setup — schematic full height */
+  .slide.setup .content{ max-width:520px; }
+  .slide.setup .plansvg{ max-width:none; max-height:none; width:auto; height:min(64vh, calc(100dvh - 260px)); }
+  .slide.setup .plan{ padding:20px; }
+  .slide.setup h2{ font-size:46px; margin-bottom:10px; }
+  .slide.setup .venue{ font-size:13px; }
+
+  /* let's discuss — logo 2x */
+  .slide.discuss .glasslogo{ width:min(40vw,500px); }
+  .slide.discuss .content{ max-width:min(52vw,560px); }
+  .slide.discuss .ci .v{ font-size:18px; } .slide.discuss .ci b{ font-size:12px; }
+}
+
+
+/* desktop but short (laptops): dial back the largest bumps so nothing clips */
+@media (min-width:900px) and (max-height:820px){
+  .slide.catsp .cs-feature{ width:210px; height:266px; }
+  .slide.catsp h2{ font-size:50px; } .slide.catsp .lead{ font-size:17px; }
+  .slide.discuss .glasslogo{ width:min(30vw,340px); margin-bottom:8px; }
+  .slide.discuss .ci .v{ font-size:15px; } .slide.discuss .contact{ gap:8px; } .slide.discuss .disc-line{ margin-top:8px; }
+  .slide.cats h2{ font-size:52px; } .slide.cats .glass{ padding:28px 32px; }
+  .slide.cats .catlist li{ padding:11px 0; } .slide.cats .catlist b{ font-size:26px; }
+}
 @media (prefers-reduced-motion:reduce){
   *{ animation:none !important; scroll-behavior:auto; }
   .reveal{ opacity:1; transform:none; transition:none; }
@@ -854,7 +920,7 @@ build();
 
   <!-- 4a · SONNY -->
   <section class="slide rslide" data-label="Sonny Boy">
-    <div class="media"><img src="assets/riders/sonny.jpg" alt="" style="object-position:center 32%"><div class="grain"></div></div>
+    <div class="media"><img class="sonny-img" src="assets/riders/sonny.jpg" alt="" style="object-position:center 32%"><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
       <div class="glass rcard reveal">
@@ -1272,6 +1338,7 @@ deck.addEventListener('scroll',()=>{
 (function(){
   const wrap=document.getElementById('bubbles'); if(!wrap) return;
   const slide=wrap.closest('.slide');
+  var _big=(typeof window!=="undefined"&&window.innerWidth>=900)?1.9:1;
   const data=[["Philippines","ph",52],["Japan","jp",46],["Korea","kr",40],["Taiwan","tw",36],
     ["Hong Kong","hk",42],["Thailand","th",48],["Malaysia","my",38],["Singapore","sg",34],
     ["Australia","au",50],["France","fr",44],["Finland","fi",37],["Brazil","br",45]];
@@ -1280,9 +1347,9 @@ deck.addEventListener('scroll',()=>{
 
   data.forEach(([name,code,r])=>{
     const el=document.createElement('div'); el.className='bubble';
-    el.style.width=el.style.height=(r*2)+'px';
+    el.style.width=el.style.height=(r*2*_big)+'px';
     el.innerHTML='<img class="bflag" src="assets/flags/'+code+'.svg" alt=""><span class="bname">'+name+'</span><span class="bshine"></span>';
-    wrap.appendChild(el); B.push({el,r,x:0,y:0,vx:0,vy:0});
+    wrap.appendChild(el); B.push({el,r:r*_big,x:0,y:0,vx:0,vy:0});
   });
 
   function bounds(){
