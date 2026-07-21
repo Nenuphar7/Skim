@@ -85,10 +85,9 @@ body{
 .media .flow b:nth-child(3){ width:55%; height:55%; left:20%; bottom:-20%; background:#0a3a4a; animation-duration:26s; animation-delay:-8s; }
 .slide[data-tone="warm"] .flow b:nth-child(1){ background:var(--coral); }
 .slide[data-tone="warm"] .flow b:nth-child(2){ background:var(--pink); }
-.slide[data-tone="warm"] .flow b:nth-child(3){ background:#5e2740; }
-.slide[data-tone="sunny"] .flow b:nth-child(1){ background:var(--lemon); }
-.slide[data-tone="sunny"] .flow b:nth-child(2){ background:var(--coral); }
-.slide[data-tone="sunny"] .flow b:nth-child(3){ background:#0c6c77; }
+.slide[data-tone="warm"] .flow b:nth-child(3){ background:#b0486a; }
+.slide[data-tone="warm"] .media{ background:linear-gradient(180deg,#3c1530,#7c2f4d); }
+
 @keyframes drift{ to{ transform:translate3d(6%,4%,0) scale(1.15); } }
 
 /* legibility veil */
@@ -97,6 +96,11 @@ body{
   background:
     radial-gradient(120% 80% at 50% 10%, transparent 40%, rgba(3,18,26,.45) 100%),
     linear-gradient(180deg, rgba(3,18,26,.15) 0%, rgba(3,18,26,.35) 45%, rgba(3,18,26,.82) 100%);
+}
+.slide[data-tone="warm"] .media::after{
+  background:
+    radial-gradient(120% 80% at 50% 10%, transparent 45%, rgba(46,12,32,.35) 100%),
+    linear-gradient(180deg, rgba(46,12,32,.10) 0%, rgba(46,12,32,.24) 50%, rgba(38,10,28,.55) 100%);
 }
 /* grain */
 .media .grain{
@@ -307,7 +311,7 @@ p.lead + p.lead{ margin-top:14px; }
   letter-spacing:.1em; text-transform:uppercase; text-align:center; padding:4px; background:rgba(4,20,28,.62); color:var(--aqua); }
 
 /* let's discuss contacts */
-.discuss .glasslogo{ width:min(52vw,250px); }
+.discuss .glasslogo{ width:min(60vw,248px); }
 .contact{ display:flex; flex-direction:column; gap:9px; }
 .contact .cta{ display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:14px; text-decoration:none; }
 .contact .cta.wa{ background:linear-gradient(135deg,var(--aqua),var(--teal)); color:#04212e; }
@@ -379,8 +383,11 @@ p.lead + p.lead{ margin-top:14px; }
 .pd-two{ display:flex; flex-direction:column; gap:12px; }
 
 /* ---------- let's discuss (left panel, links) ---------- */
-.slide.discuss .content{ max-width:min(66vw,330px); margin:0; align-items:flex-start; }
-.slide.discuss .glasslogo{ display:block; width:100%; max-width:216px; margin:0 auto 8px; }
+.slide.discuss .content{ max-width:min(66vw,330px); margin:0; align-items:stretch; }
+.disc-line{ margin-top:12px; white-space:nowrap; overflow:visible; opacity:.92;
+  text-shadow:0 2px 10px rgba(4,16,24,.55), 0 1px 3px rgba(4,16,24,.45); }
+
+.slide.discuss .glasslogo{ display:block; width:min(60vw,248px); margin:-26px auto 10px; align-self:center; }
 .slide.discuss .eyebrow{ white-space:nowrap; text-shadow:0 2px 10px rgba(2,14,22,.6); }
 .contact{ display:flex; flex-direction:column; gap:13px; }
 .ci{ display:block; text-decoration:none; }
@@ -518,8 +525,8 @@ a.ci:active .v.link{ color:var(--aqua); }
 <main class="deck" id="deck">
 
   <!-- 0 · LANGUAGE -->
-  <section class="slide lang" data-label="Language">
-    <div class="media"><img src="assets/lang/hero.jpg" alt="" style="object-position:center top"><div class="grain"></div></div>
+  <section class="slide lang" data-tone="warm" data-label="Language">
+    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="content langwrap">
       <div class="glasslogo" role="img" aria-label="Bali Skim Gathering 2026">
         <div class="gl-fill"></div><div class="gl-sheen"></div>
@@ -728,7 +735,7 @@ a.ci:active .v.link{ color:var(--aqua); }
 
   <!-- 5 · CATEGORIES -->
   <section class="slide cats" data-label="Categories">
-    <div class="media"><video src="assets/clips/clip5.mp4" muted loop playsinline preload="auto" style="background:var(--ink)"></video><div class="grain"></div></div>
+    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
       <div class="eyebrow reveal">Categories &amp; Awards</div>
@@ -875,7 +882,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- PACKAGE DETAILS · BARREL -->
-  <section class="slide pkgd" data-tone="sunny" data-label="Barrel details">
+  <section class="slide pkgd" data-label="Barrel details">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="content">
       <div class="eyebrow reveal">Package Details</div>
@@ -900,8 +907,8 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- PACKAGE DETAILS · SHOREBREAK -->
-  <section class="slide pkgd" data-tone="warm" data-label="Shorebreak details">
-    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+  <section class="slide pkgd" data-label="Shorebreak details">
+    <div class="media"><video src="assets/clips/clip5.mp4" muted loop playsinline preload="auto" style="background:var(--ink)"></video><div class="grain"></div></div>
     <div class="content">
       <div class="eyebrow reveal">Package Details</div>
       <div class="pd-head reveal d1"><div class="pd-name">Shorebreak</div><div class="pd-price">10 jt · 2 slots</div></div>
@@ -919,8 +926,8 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- PACKAGE DETAILS · FLATS + GROMS -->
-  <section class="slide pkgd" data-tone="sunny" data-label="Flats &amp; Groms details">
-    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+  <section class="slide pkgd" data-label="Flats &amp; Groms details">
+    <div class="media"><img src="assets/lang/hero.jpg" alt="" style="object-position:center top"><div class="grain"></div></div>
     <div class="content">
       <div class="eyebrow reveal">Package Details</div>
       <div class="pd-two">
@@ -947,7 +954,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- 10 · CATEGORY SPONSORS -->
-  <section class="slide catsp" data-tone="warm" data-label="Category sponsors">
+  <section class="slide catsp" data-label="Category sponsors">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
@@ -962,7 +969,7 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- ADD-ONS · NAMED MOMENTS -->
-  <section class="slide moments" data-tone="sunny" data-label="Named moments">
+  <section class="slide moments" data-label="Named moments">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
@@ -997,7 +1004,7 @@ a.ci:active .v.link{ color:var(--aqua); }
         <div class="gl-fill"></div><div class="gl-sheen"></div>
         <img class="gl-edge" src="assets/logo-fest-stroke.svg" alt="">
       </div>
-      <div class="eyebrow reveal d1" style="margin-top:14px">Let's Discuss · 12–13 Sep 2026</div>
+      <div class="eyebrow reveal d1 disc-line">Let's Discuss · 12–13 Sep 2026</div>
       <div class="glass pad reveal d2 contact">
         <a class="ci" href="https://wa.me/628562018133" target="_blank" rel="noopener">
           <b>WhatsApp</b>
