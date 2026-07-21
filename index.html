@@ -193,6 +193,21 @@ p.lead + p.lead{ margin-top:14px; }
 .pkg .slot{ font-size:12px; color:rgba(241,236,224,.6); margin-top:10px; }
 .pkg.hero .slot{ color:rgba(241,236,224,.78); }
 
+
+/* ---------- rider slides ---------- */
+.rslide .content{ max-width:640px; }
+.rcard{ padding:22px 22px 24px; }
+.rcard .rtop{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+.rcard .country{ font-family:var(--data); font-size:11px; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--aqua); }
+.rcard .krabi{ font-family:var(--data); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--lemon); border:1px solid rgba(236,255,107,.4); padding:4px 8px; border-radius:999px; }
+.rcard .rname{ font-family:var(--disp); font-weight:400; font-size:clamp(30px,8vw,44px); line-height:.98; }
+.rcard .rbrand{ font-family:var(--data); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:rgba(241,236,224,.7); margin-top:8px; }
+.rcard ul{ list-style:none; margin-top:16px; display:flex; flex-direction:column; gap:9px; }
+.rcard li{ font-size:14px; line-height:1.35; color:rgba(241,236,224,.9); display:flex; gap:10px; }
+.rcard li::before{ content:""; flex:none; width:6px; height:6px; margin-top:6px; border-radius:50%; background:var(--pink); }
+.rintro h2{ margin-bottom:16px; }
+
+/* ---------- rider slides ---------- */
 /* ---------- progress rail ---------- */
 .rail{
   position:fixed; top:0; left:0; right:0; z-index:20; height:3px;
@@ -351,24 +366,82 @@ p.lead + p.lead{ margin-top:14px; }
     </div>
   </section>
 
-  <!-- 4 · RIDER -->
-  <section class="slide rider" data-label="The riders">
-    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div><div class="tag">▶ rider reel</div></div>
+  <!-- 4 · RIDERS INTRO -->
+  <section class="slide rintro" data-label="The riders">
+    <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
+    <div class="waterline"></div>
     <div class="content">
-      <div class="eyebrow reveal">The riders — the crew that swept Krabi</div>
-      <div class="glass reveal d1">
-        <div class="photo"><div class="tag">rider portrait</div></div>
-        <div class="meta">
-          <div class="name">Sonny Boy Aporbo</div>
-          <div class="brand">Zap Skimboards · Pro</div>
-          <ul>
-            <li><b>WIN</b><span>Algarve International, Portugal</span></li>
-            <li><b>16K</b><span>followers, own channel</span></li>
-            <li><b>PH</b><span>Mati Watersports Association, Dahican</span></li>
-          </ul>
-        </div>
+      <div class="eyebrow reveal">The riders</div>
+      <h2 class="reveal d1">The crew that<br>swept Krabi</h2>
+      <div class="glass pad reveal d2">
+        <p class="lead">September 2025 — riders from Mati Watersports Association (Dahican, Philippines) took the top four spots at the Krabi Skimboard Competition, Thailand. <span class="spark">Three of them are coming to Bali</span> — plus France's Anton Bruneau.</p>
       </div>
-      <p class="lead reveal d2" style="margin-top:16px;font-size:15px">Their runs, filmed on Berawa, go straight to skim communities in every country on the riders list — <span class="spark">with your branding behind every trick.</span></p>
+    </div>
+  </section>
+
+  <!-- 4a · SONNY -->
+  <section class="slide rslide" data-label="Sonny Boy">
+    <div class="media"><img src="assets/riders/sonny.jpg" alt="" style="object-position:center 32%"><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="glass rcard reveal">
+        <div class="rtop"><span class="country">Philippines</span><span class="krabi">Krabi '25 · top 4</span></div>
+        <div class="rname">Sonny Boy Aporbo</div>
+        <div class="rbrand">Zap Skimboards · Pro</div>
+        <ul>
+          <li>Winner — Algarve International, Portugal</li>
+          <li>16K followers · films every run to his own channel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4b · RODEL -->
+  <section class="slide rslide" data-label="Rodel">
+    <div class="media"><img src="assets/riders/rodel.jpg" alt="" style="object-position:center 40%"><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="glass rcard reveal">
+        <div class="rtop"><span class="country">Philippines</span><span class="krabi">Krabi '25 · top 4</span></div>
+        <div class="rname">Rodel Patawi</div>
+        <ul>
+          <li>Champion — Krabi Skimboard Competition 3 (2025)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4c · KING (video) -->
+  <section class="slide rslide" data-label="King Jhon">
+    <div class="media">
+      <video src="assets/riders/king.mp4" poster="assets/riders/king-poster.jpg" muted loop playsinline preload="metadata"></video>
+      <div class="grain"></div>
+    </div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="glass rcard reveal">
+        <div class="rtop"><span class="country">Philippines</span><span class="krabi">Krabi '25 · top 4</span></div>
+        <div class="rname">King Jhon Bucong</div>
+        <ul>
+          <li>Champion — Penang International Junior Men (2024)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4d · ANTON -->
+  <section class="slide rslide" data-label="Anton">
+    <div class="media"><img src="assets/riders/anton.jpg" alt="" style="object-position:center 42%"><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="glass rcard reveal">
+        <div class="rtop"><span class="country">France</span></div>
+        <div class="rname">Anton Bruneau</div>
+        <div class="rbrand">Eden Skimboards · Team</div>
+        <ul>
+          <li>No stranger to Bali — he's ridden Dreamland before</li>
+        </ul>
+      </div>
     </div>
   </section>
 
