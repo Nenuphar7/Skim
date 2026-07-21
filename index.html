@@ -14,9 +14,10 @@
   --foam:#f1ece0;
   --aqua:#38d6c2;
   --teal:#0c6c77;
-  --sun:#ffb020;
-  --coral:#ff5a3c;
-
+  --lemon:#ecff6b;
+  --coral:#ff8a90;
+  --pink:#f5648b;
+  
   --glass-fill: linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.04));
   --glass-border: rgba(255,255,255,.28);
 
@@ -78,8 +79,8 @@ body{
 .media .flow b:nth-child(1){ width:70%; height:70%; left:-10%; top:-10%; background:var(--teal); }
 .media .flow b:nth-child(2){ width:60%; height:60%; right:-15%; top:10%; background:var(--aqua); animation-duration:22s; animation-delay:-4s; }
 .media .flow b:nth-child(3){ width:55%; height:55%; left:20%; bottom:-20%; background:#0a3a4a; animation-duration:26s; animation-delay:-8s; }
-.slide[data-tone="warm"] .flow b:nth-child(2){ background:var(--sun); }
-.slide[data-tone="warm"] .flow b:nth-child(1){ background:var(--coral); }
+.slide[data-tone="warm"] .flow b:nth-child(2){ background:var(--lemon); }
+.slide[data-tone="warm"] .flow b:nth-child(1){ background:var(--pink); }
 @keyframes drift{ to{ transform:translate3d(6%,4%,0) scale(1.15); } }
 
 /* legibility veil */
@@ -134,7 +135,7 @@ h2{ font-size:clamp(32px, 8.5vw, 60px); margin-bottom:18px; }
 
 p.lead{ font-size:clamp(16px,4.3vw,20px); line-height:1.5; color:rgba(241,236,224,.9); max-width:46ch; }
 p.lead + p.lead{ margin-top:14px; }
-.spark{ color:var(--sun); font-weight:600; }
+.spark{ color:var(--lemon); font-weight:600; }
 
 /* ---------- glass ---------- */
 .glass{
@@ -179,15 +180,15 @@ p.lead + p.lead{ margin-top:14px; }
 .rider .brand{ font-family:var(--data); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--aqua); margin-top:6px; }
 .rider ul{ list-style:none; margin-top:16px; display:flex; flex-direction:column; gap:9px; }
 .rider li{ font-size:14px; color:rgba(241,236,224,.86); display:flex; gap:10px; align-items:baseline; }
-.rider li b{ font-family:var(--data); color:var(--sun); font-weight:700; font-size:12px; letter-spacing:.05em; white-space:nowrap; }
+.rider li b{ font-family:var(--data); color:var(--lemon); font-weight:700; font-size:12px; letter-spacing:.05em; white-space:nowrap; }
 
 /* ---------- packages ---------- */
 .packages .content{ max-width:680px; }
 .pkgs{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px; }
 .pkg{ padding:18px 16px 20px; border-radius:20px; }
-.pkg.hero{ grid-column:1 / -1; border:1px solid rgba(255,176,32,.4); }
+.pkg.hero{ grid-column:1 / -1; border:1px solid rgba(236,255,107,.45); }
 .pkg .k{ font-family:var(--disp); font-weight:400; font-size:20px; letter-spacing:.01em; }
-.pkg.hero .k{ font-size:30px; color:var(--sun); }
+.pkg.hero .k{ font-size:30px; color:var(--lemon); }
 .pkg .price{ font-family:var(--data); font-size:13px; letter-spacing:.06em; color:var(--aqua); margin-top:4px; }
 .pkg .slot{ font-size:12px; color:rgba(241,236,224,.6); margin-top:10px; }
 .pkg.hero .slot{ color:rgba(241,236,224,.78); }
@@ -198,7 +199,7 @@ p.lead + p.lead{ margin-top:14px; }
   background:rgba(255,255,255,.1);
 }
 .rail i{ display:block; height:100%; width:0;
-  background:linear-gradient(90deg,var(--aqua),var(--sun)); transition:width .25s ease; }
+  background:linear-gradient(90deg,var(--aqua),var(--lemon) 55%,var(--pink)); transition:width .25s ease; }
 
 .dots{
   position:fixed; right:12px; top:50%; transform:translateY(-50%); z-index:20;
@@ -264,6 +265,12 @@ p.lead + p.lead{ margin-top:14px; }
 /* desktop */
 @media (min-width:900px){
   .cover-top{ top:calc(var(--pad) + env(safe-area-inset-top)); align-items:flex-start; }
+  .slide[data-label="Cover"] .content{ margin-bottom:40px; }
+  .slide[data-label="Cover"] .content .mikword{ height:50px; }
+  .slide[data-label="Cover"] .content .eyebrow{ font-size:20px; letter-spacing:.26em; }
+  .slide[data-label="Cover"] .content .presents{ margin-bottom:22px; }
+  .slide[data-label="Cover"] .content > p:first-of-type{ font-size:61px !important; line-height:1.08; }
+  .slide[data-label="Cover"] .content .lead{ font-size:34px; max-width:34ch; }
 
   .slide{ padding-bottom:calc(var(--pad) + 20px); }
   .content{ max-width:720px; }
