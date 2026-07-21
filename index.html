@@ -380,7 +380,8 @@ p.lead + p.lead{ margin-top:14px; }
 
 /* ---------- let's discuss (left panel, links) ---------- */
 .slide.discuss .content{ max-width:min(66vw,330px); margin:0; align-items:flex-start; }
-.slide.discuss .glasslogo{ width:100%; max-width:188px; }
+.slide.discuss .glasslogo{ display:block; width:100%; max-width:216px; margin:0 auto 8px; }
+.slide.discuss .eyebrow{ white-space:nowrap; text-shadow:0 2px 10px rgba(2,14,22,.6); }
 .contact{ display:flex; flex-direction:column; gap:13px; }
 .ci{ display:block; text-decoration:none; }
 .ci b{ display:block; font-family:var(--data); font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--aqua); margin-bottom:4px; }
@@ -1138,7 +1139,7 @@ deck.addEventListener('scroll',()=>{
   if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(place); } else { setTimeout(place,400); }
   setTimeout(place,600);
   new ResizeObserver(()=>place()).observe(wrap);
-  new IntersectionObserver((es)=>{es.forEach(e=>e.isIntersecting?start():stop());},{threshold:.2}).observe(slide);
+  new IntersectionObserver((es)=>{es.forEach(e=>{ if(e.isIntersecting){ if(!placed){place();placed=true;} start(); } else stop(); });},{threshold:.2}).observe(slide);
 })();
 
 </script>
