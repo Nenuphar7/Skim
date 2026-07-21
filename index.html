@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -310,6 +311,23 @@ p.lead + p.lead{ margin-top:14px; }
 .contact .crow{ display:flex; gap:12px; align-items:baseline; padding:2px 2px; }
 .contact .crow b{ font-family:var(--data); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--aqua); width:76px; flex:none; }
 .contact .crow span{ font-size:13.5px; color:rgba(241,236,224,.9); }
+
+
+/* ---------- let's discuss (left panel, links) ---------- */
+.slide.discuss .content{ max-width:min(66vw,330px); margin:0; align-items:flex-start; }
+.slide.discuss .glasslogo{ width:100%; max-width:188px; }
+.contact{ display:flex; flex-direction:column; gap:13px; }
+.ci{ display:block; text-decoration:none; }
+.ci b{ display:block; font-family:var(--data); font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--aqua); margin-bottom:4px; }
+.ci .v{ display:block; font-size:14px; line-height:1.35; color:var(--foam); }
+.ci .v.link{ color:#eafffb; border-bottom:1px solid rgba(56,214,194,.55); display:inline; padding-bottom:1px; }
+a.ci:active .v.link{ color:var(--aqua); }
+.ci.bank .v{ color:rgba(241,236,224,.85); }
+
+/* ---------- content & exposure (split top/bottom) ---------- */
+.slide.expo .content{ flex:1 1 auto; align-self:stretch; display:flex; flex-direction:column; justify-content:space-between; max-width:640px; margin:0 auto; }
+.expo-top, .expo-bottom{ width:100%; }
+.expo-top .glass{ margin-top:14px; }
 
 /* ---------- tall slides: anchor to top so title stays visible ---------- */
 
@@ -670,11 +688,17 @@ p.lead + p.lead{ margin-top:14px; }
     <div class="media"><video src="assets/clips/clip3.mp4" muted loop playsinline preload="auto" style="background:var(--ink)"></video><div class="grain"></div></div>
     <div class="waterline"></div>
     <div class="content">
-      <div class="eyebrow reveal">Content &amp; Exposure</div>
-      <h2 class="reveal d1">Behind every<br>trick, your brand</h2>
-      <div class="glass pad reveal d2">
-        <p class="lead">Captured live — photo (Alan), video + drone (Mufti), rider interviews (Igi). After: a recap film on MIK's channels and a full photo bank shared with sponsors.</p>
-        <p class="lead" style="margin-top:12px"><span class="spark">The multiplier:</span> every visiting rider films their own trip — their runs reach skim communities in 10+ countries, your branding behind every trick.</p>
+      <div class="expo-top">
+        <div class="eyebrow reveal">Content &amp; Exposure</div>
+        <h2 class="reveal d1">Behind every<br>trick, your brand</h2>
+        <div class="glass pad reveal d2">
+          <p class="lead">Captured live — photo (Alan), video + drone (Mufti), rider interviews (Igi). After: a recap film on MIK's channels and a full photo bank shared with sponsors.</p>
+        </div>
+      </div>
+      <div class="expo-bottom">
+        <div class="glass pad reveal d2">
+          <p class="lead"><span class="spark">The multiplier:</span> every visiting rider films their own trip — their runs reach skim communities in 10+ countries, your branding behind every trick.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -774,13 +798,30 @@ p.lead + p.lead{ margin-top:14px; }
         <div class="gl-fill"></div><div class="gl-sheen"></div>
         <img class="gl-edge" src="assets/logo-fest-stroke.svg" alt="">
       </div>
-      <div class="eyebrow reveal d1" style="margin-top:14px">Let's Discuss · 12–13 Sep 2026 · Berawa</div>
+      <div class="eyebrow reveal d1" style="margin-top:14px">Let's Discuss · 12–13 Sep 2026</div>
       <div class="glass pad reveal d2 contact">
-        <a class="cta wa" href="https://wa.me/628562018133" target="_blank" rel="noopener"><b>WhatsApp</b><span>Gonzo · +62 856 2018 133</span></a>
-        <a class="cta em" href="mailto:mikskimboards@gmail.com"><b>Email</b><span>mikskimboards@gmail.com</span></a>
-        <div class="crow"><b>Studio</b><span>MIK Skimboards — Canggu, Bali</span></div>
-        <div class="crow"><b>Online</b><span>@mikskimboards · mikskimboards.com</span></div>
-        <div class="crow"><b>BCA</b><span>7445038385 · Tomi Cobrazil</span></div>
+        <a class="ci" href="https://wa.me/628562018133" target="_blank" rel="noopener">
+          <b>WhatsApp</b>
+          <span class="v">Message Gonzo</span>
+          <span class="v link">+62 856 2018 133</span>
+        </a>
+        <a class="ci" href="mailto:mikskimboards@gmail.com">
+          <b>Email</b>
+          <span class="v link">mikskimboards@gmail.com</span>
+        </a>
+        <a class="ci" href="https://instagram.com/mikskimboards" target="_blank" rel="noopener">
+          <b>Instagram</b>
+          <span class="v link">@mikskimboards</span>
+        </a>
+        <a class="ci" href="https://mikskimboards.com" target="_blank" rel="noopener">
+          <b>Website</b>
+          <span class="v link">mikskimboards.com</span>
+        </a>
+        <div class="ci bank">
+          <b>Bank account · BCA</b>
+          <span class="v">7445038385</span>
+          <span class="v">Tomi Cobrazil</span>
+        </div>
       </div>
     </div>
   </section>
