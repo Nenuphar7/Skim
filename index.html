@@ -328,6 +328,27 @@ p.lead + p.lead{ margin-top:14px; }
 .note{ margin-top:12px; font-size:12px; line-height:1.35; color:rgba(241,236,224,.72); }
 .note b{ color:var(--aqua); font-weight:500; }
 
+
+/* ---------- country bubbles ---------- */
+.bubbles{ position:absolute; inset:0; z-index:2; overflow:hidden; pointer-events:none; }
+.bubble{ position:absolute; top:0; left:0; border-radius:50%; overflow:hidden;
+  border:1.5px solid rgba(255,255,255,.55); backface-visibility:hidden;
+  box-shadow: inset 0 2px 6px rgba(255,255,255,.6), inset 0 -10px 18px rgba(2,18,28,.45), 0 12px 26px -8px rgba(0,10,20,.55);
+  will-change:transform; }
+.bubble .bflag{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.bubble .bname{ position:absolute; left:0; right:0; bottom:0; text-align:center; font-family:var(--data);
+  font-size:10px; font-weight:500; letter-spacing:.02em; padding:7px 3px 6px; color:#fff;
+  background:linear-gradient(transparent, rgba(3,18,26,.82)); }
+.bubble .bshine{ position:absolute; top:7%; left:12%; width:42%; height:34%; border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle at 32% 32%, rgba(255,255,255,.7), transparent 68%); }
+
+.gathernum .content{ z-index:3; position:relative; pointer-events:none; }
+.gathernum .content.gn-split{ flex:1 1 auto; align-self:stretch; display:flex; flex-direction:column; justify-content:space-between; }
+.gn-top h2, .gn-top .eyebrow{ text-shadow:0 2px 18px rgba(0,10,16,.7); }
+.gn-facts{ display:flex; flex-wrap:wrap; gap:6px 18px; padding:12px 16px; }
+.gn-facts span{ font-size:13px; color:rgba(241,236,224,.92); }
+.gn-facts b{ font-family:var(--disp); font-weight:400; color:var(--aqua); font-size:18px; margin-right:5px; }
+
 /* ---------- the gathering ---------- */
 .pills{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
 .pills span{ font-family:var(--data); font-size:11px; letter-spacing:.03em; padding:5px 9px; border-radius:999px;
@@ -600,18 +621,17 @@ a.ci:active .v.link{ color:var(--aqua); }
   <!-- THE GATHERING · NUMBERS -->
   <section class="slide gathernum" data-label="By the numbers">
     <div class="media"><div class="flow"><b></b><b></b><b></b></div><div class="grain"></div></div>
-    <div class="waterline"></div>
-    <div class="content">
-      <div class="eyebrow reveal">The Gathering · by the numbers</div>
-      <h2 class="reveal d1">50–80 riders,<br>10+ countries</h2>
-      <div class="glass pad reveal d2">
-        <div class="pills">
-          <span>Philippines</span><span>Japan</span><span>Korea</span><span>Taiwan</span><span>Hong Kong</span><span>Thailand</span><span>Malaysia</span><span>Singapore</span><span>Australia</span><span>France</span><span>Finland</span><span>Brazil</span>
-        </div>
-        <div class="facts">
-          <div class="f"><b>5 CATS</b><span>competition categories — under 12 to masters 40+</span></div>
-          <div class="f"><b>FREE</b><span>for spectators — no ticket, no invitation</span></div>
-          <div class="f"><b>BERAWA</b><span>one of Canggu's most-visited stretches of sand</span></div>
+    <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+    <div class="content gn-split">
+      <div class="gn-top">
+        <div class="eyebrow reveal">The Gathering</div>
+        <h2 class="reveal d1">Riders from<br>10+ countries</h2>
+      </div>
+      <div class="gn-bottom reveal d2">
+        <div class="glass pad gn-facts">
+          <span><b>50–80</b>riders</span>
+          <span><b>5</b>categories</span>
+          <span><b>Free</b>for spectators · Berawa</span>
         </div>
       </div>
     </div>
@@ -1044,6 +1064,70 @@ deck.addEventListener('scroll',()=>{
   const max=deck.scrollHeight-deck.clientHeight;
   bar.style.width=(max? deck.scrollTop/max*100 : 0)+'%';
 },{passive:true});
+
+// ---- country bubbles: float + collide ----
+(function(){
+  const wrap=document.getElementById('bubbles'); if(!wrap) return;
+  const slide=wrap.closest('.slide');
+  const data=[["Philippines","ph",64],["Japan","jp",58],["Korea","kr",50],["Taiwan","tw",46],
+    ["Hong Kong","hk",52],["Thailand","th",60],["Malaysia","my",48],["Singapore","sg",44],
+    ["Australia","au",62],["France","fr",54],["Finland","fi",47],["Brazil","br",56]];
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W=wrap.clientWidth, H=wrap.clientHeight, B=[], raf=0, running=false;
+
+  data.forEach(([name,code,r])=>{
+    const el=document.createElement('div'); el.className='bubble';
+    el.style.width=el.style.height=(r*2)+'px';
+    el.innerHTML='<img class="bflag" src="assets/flags/'+code+'.svg" alt=""><span class="bname">'+name+'</span><span class="bshine"></span>';
+    wrap.appendChild(el);
+    B.push({el,r,x:0,y:0,vx:0,vy:0});
+  });
+
+  function place(){
+    W=wrap.clientWidth; H=wrap.clientHeight;
+    B.forEach(b=>{
+      let ok=false,tries=0;
+      while(!ok && tries++<80){
+        b.x=b.r+Math.random()*(W-2*b.r); b.y=b.r+Math.random()*(H-2*b.r); ok=true;
+        for(const o of B){ if(o===b||o.x===0&&o.y===0) continue;
+          const dx=o.x-b.x,dy=o.y-b.y; if(Math.hypot(dx,dy)<b.r+o.r+6){ok=false;break;} }
+      }
+      const a=Math.random()*Math.PI*2, sp=reduce?0:(0.25+Math.random()*0.5);
+      b.vx=Math.cos(a)*sp; b.vy=Math.sin(a)*sp;
+      b.el.style.transform='translate3d('+(b.x-b.r)+'px,'+(b.y-b.r)+'px,0)';
+    });
+  }
+  function step(){
+    for(const b of B){
+      b.x+=b.vx; b.y+=b.vy;
+      if(b.x<b.r){b.x=b.r;b.vx=-b.vx;} if(b.x>W-b.r){b.x=W-b.r;b.vx=-b.vx;}
+      if(b.y<b.r){b.y=b.r;b.vy=-b.vy;} if(b.y>H-b.r){b.y=H-b.r;b.vy=-b.vy;}
+    }
+    for(let i=0;i<B.length;i++) for(let j=i+1;j<B.length;j++){
+      const a=B[i],c=B[j]; let dx=c.x-a.x,dy=c.y-a.y; let d=Math.hypot(dx,dy)||0.001;
+      const min=a.r+c.r;
+      if(d<min){
+        const nx=dx/d,ny=dy/d, ov=(min-d)/2;
+        a.x-=nx*ov; a.y-=ny*ov; c.x+=nx*ov; c.y+=ny*ov;
+        const dvx=c.vx-a.vx,dvy=c.vy-a.vy, dot=dvx*nx+dvy*ny;
+        if(dot<0){ const mi=a.r*a.r,mj=c.r*c.r, p=2*dot/(mi+mj);
+          a.vx+=p*mj*nx; a.vy+=p*mj*ny; c.vx-=p*mi*nx; c.vy-=p*mi*ny; }
+      }
+    }
+    for(const b of B){ // gentle speed clamp
+      const sp=Math.hypot(b.vx,b.vy); if(sp>1.1){b.vx*=1.1/sp;b.vy*=1.1/sp;}
+      b.el.style.transform='translate3d('+(b.x-b.r)+'px,'+(b.y-b.r)+'px,0)';
+    }
+    if(running) raf=requestAnimationFrame(step);
+  }
+  function start(){ if(running||reduce) return; running=true; raf=requestAnimationFrame(step); }
+  function stop(){ running=false; cancelAnimationFrame(raf); }
+
+  place();
+  new ResizeObserver(()=>{ place(); }).observe(wrap);
+  new IntersectionObserver((es)=>{ es.forEach(e=> e.isIntersecting?start():stop()); },{threshold:.2}).observe(slide);
+})();
+
 </script>
 </body>
 </html>
