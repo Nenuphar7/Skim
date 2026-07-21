@@ -237,6 +237,24 @@ p.lead + p.lead{ margin-top:14px; }
 
 
 
+
+/* ---------- language slide: holographic palette (slide 0 only) ---------- */
+.slide.lang .media{ background:linear-gradient(165deg,#4a5fc4 0%,#7a6fd4 45%,#5aa8c9 100%); }
+.slide.lang .flow b:nth-child(1){ background:#be85e1; }
+.slide.lang .flow b:nth-child(2){ background:#82d7e1; }
+.slide.lang .flow b:nth-child(3){ background:#8bc29c; }
+.slide.lang .media::after{
+  background:
+    radial-gradient(120% 80% at 50% 10%, transparent 45%, rgba(30,26,66,.38) 100%),
+    linear-gradient(180deg, rgba(30,26,66,.08) 0%, rgba(30,26,66,.22) 55%, rgba(24,20,58,.60) 100%);
+}
+.slide.lang .gl-fill{
+  background:linear-gradient(160deg, rgba(255,255,255,.38), rgba(190,133,225,.14) 55%, rgba(130,215,225,.24)) !important;
+}
+.slide.lang .gl-sheen{
+  background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.46) 46%, rgba(190,133,225,.32) 52%, transparent 66%) !important;
+  background-size:260% 100% !important;
+}
 /* ---------- language gate ---------- */
 .slide.lang{ justify-content:flex-end; }
 .langwrap{ margin-bottom:30px; }
@@ -543,7 +561,7 @@ var LOGO_BB={x:362.1,y:127.9,w:1237.6,h:859.0};   // рамка букв в ка
 var WORLD_W=1920, WORLD_H=1080;
 /* характер волн — в долях кадра, масштабируется сам */
 var WAVES=3, SPACING_W=132, SPEED_W=1.16, DECAY=1.25, EDGEW=0.42;
-var LEMON=[[232,240,86],[212,226,58],[184,208,44]];
+var LEMON=[[196,240,248],[190,133,225],[137,150,230]];
 
 var script=document.currentScript, host=script.parentElement;
 if(getComputedStyle(host).position==="static") host.style.position="relative";
