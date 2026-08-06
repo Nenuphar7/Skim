@@ -611,12 +611,13 @@ a.ci:active .v.link{ color:var(--aqua); }
   .reveal{ opacity:1; transform:none; transition:none; }
 }
 :focus-visible{ outline:2px solid var(--aqua); outline-offset:3px; border-radius:6px; }
-.slide.invite .media::after{ background:linear-gradient(180deg, rgba(18,8,28,.52) 0%, rgba(18,8,28,.12) 17%, transparent 40%, transparent 62%, rgba(18,8,28,.22) 80%, rgba(18,8,28,.52) 100%); }
+.slide.invite .media::after{ background:linear-gradient(180deg, rgba(14,6,22,.62) 0%, rgba(14,6,22,.24) 26%, transparent 48%, transparent 60%, rgba(18,8,28,.24) 80%, rgba(18,8,28,.54) 100%); }
 .slide.invite .content{ text-shadow:0 2px 16px rgba(8,3,18,.5); }
 .invite-title{ position:absolute; z-index:3; left:var(--pad); right:var(--pad); top:calc(env(safe-area-inset-top) + 46px); text-shadow:0 2px 16px rgba(8,3,18,.55); }
 .slide.vibe{ justify-content:flex-start; }
 .slide.vibe .content{ margin-top:calc(env(safe-area-inset-top) + 40px); }
 .slide.vibe .media::after{ background:linear-gradient(180deg, rgba(40,14,26,.6) 0%, rgba(40,14,26,.18) 32%, transparent 62%); }
+.slide.invite .glass{ background:linear-gradient(160deg, rgba(6,22,30,.5), rgba(6,22,30,.36)); }
 </style>
 </head>
 <body>
@@ -700,52 +701,6 @@ a.ci:active .v.link{ color:var(--aqua); }
       <h2 class="reveal d1">MIK<br>Skimboards</h2>
       <div class="glass pad reveal d2">
         <p class="lead">A board shop and workshop in Canggu, and <span class="spark">Bali&rsquo;s first skim school</span>. We shape boards, teach the sport, and ride it &mdash; an active part of the global skim community.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3b · ALREADY IN -->
-  <section class="slide" data-label="Already in">
-    <div class="media"><video src="assets/clips/clip1.mp4" muted loop playsinline preload="metadata"></video><div class="grain"></div></div>
-    <div class="waterline"></div>
-    <div class="content">
-      <div class="eyebrow reveal">Already in</div>
-      <h2 class="reveal d1">Who&rsquo;s on<br>the sand</h2>
-      <div class="glass pad reveal d2">
-        <p class="lead">Sonny Boy Aporbo &mdash; Krabi &rsquo;25 top four &mdash; is in, alongside France&rsquo;s Anton Bruneau. <span class="spark">More names landing every week.</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3c · SONNY -->
-  <section class="slide rslide" data-label="Sonny Boy">
-    <div class="media"><img class="sonny-img" src="assets/riders/sonny.jpg" alt="" style="object-position:center 32%"><div class="grain"></div></div>
-    <div class="waterline"></div>
-    <div class="content">
-      <div class="glass rcard reveal">
-        <div class="rtop"><span class="country">Philippines</span><span class="krabi">Krabi '25 · top 4</span></div>
-        <div class="rname">Sonny Boy Aporbo</div>
-        <div class="rbrand">Zap Skimboards · Pro</div>
-        <ul>
-          <li>Winner — Algarve International, Portugal</li>
-          <li>16K followers · films every run to his own channel</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3d · ANTON -->
-  <section class="slide rslide" data-label="Anton">
-    <div class="media"><img src="assets/riders/anton.jpg" alt="" style="object-position:25% center"><div class="grain"></div></div>
-    <div class="waterline"></div>
-    <div class="content">
-      <div class="glass rcard reveal">
-        <div class="rtop"><span class="country">France</span></div>
-        <div class="rname">Anton Bruneau</div>
-        <div class="rbrand">Eden Skimboards · Team</div>
-        <ul>
-          <li>No stranger to Bali — he's ridden Dreamland before</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -858,6 +813,52 @@ a.ci:active .v.link{ color:var(--aqua); }
           <span><b>5</b>categories</span>
           <span><b>Free</b>for spectators · Berawa</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3b · ALREADY IN -->
+  <section class="slide" data-label="Already in">
+    <div class="media"><video src="assets/clips/clip1.mp4" muted loop playsinline preload="metadata"></video><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="eyebrow reveal">Already in</div>
+      <h2 class="reveal d1">Who&rsquo;s on<br>the sand</h2>
+      <div class="glass pad reveal d2">
+        <p class="lead">Sonny Boy Aporbo &mdash; Krabi &rsquo;25 top four &mdash; is in, alongside France&rsquo;s Anton Bruneau. <span class="spark">More names landing every week.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3c · SONNY -->
+  <section class="slide rslide" data-label="Sonny Boy">
+    <div class="media"><img class="sonny-img" src="assets/riders/sonny.jpg" alt="" style="object-position:center 32%"><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="glass rcard reveal">
+        <div class="rtop"><span class="country">Philippines</span><span class="krabi">Krabi '25 · top 4</span></div>
+        <div class="rname">Sonny Boy Aporbo</div>
+        <div class="rbrand">Zap Skimboards · Pro</div>
+        <ul>
+          <li>Winner — Algarve International, Portugal</li>
+          <li>16K followers · films every run to his own channel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3d · ANTON -->
+  <section class="slide rslide" data-label="Anton">
+    <div class="media"><img src="assets/riders/anton.jpg" alt="" style="object-position:25% center"><div class="grain"></div></div>
+    <div class="waterline"></div>
+    <div class="content">
+      <div class="glass rcard reveal">
+        <div class="rtop"><span class="country">France</span></div>
+        <div class="rname">Anton Bruneau</div>
+        <div class="rbrand">Eden Skimboards · Team</div>
+        <ul>
+          <li>No stranger to Bali — he's ridden Dreamland before</li>
+        </ul>
       </div>
     </div>
   </section>
