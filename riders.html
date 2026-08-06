@@ -611,6 +611,8 @@ a.ci:active .v.link{ color:var(--aqua); }
   .reveal{ opacity:1; transform:none; transition:none; }
 }
 :focus-visible{ outline:2px solid var(--aqua); outline-offset:3px; border-radius:6px; }
+.slide.invite .media::after{ background:linear-gradient(180deg, rgba(18,8,28,.5) 0%, rgba(18,8,28,.12) 26%, transparent 52%); }
+.slide.invite .content{ text-shadow:0 2px 16px rgba(8,3,18,.5); }
 </style>
 </head>
 <body>
@@ -654,10 +656,12 @@ a.ci:active .v.link{ color:var(--aqua); }
   </section>
 
   <!-- 2 · THE INVITE -->
-  <section class="slide" data-label="Come ride">
-    <div class="media"><video src="assets/riders/crew.mp4" muted loop playsinline preload="metadata" style="transform:translateY(-8%) scale(1.22);transform-origin:center;background:var(--ink)"></video><div class="grain"></div></div>
-    <div class="waterline"></div>
-    <div class="content">
+  <section class="slide invite" data-label="Come ride" style="justify-content:flex-start">
+    <div class="media" style="background:linear-gradient(180deg,#2a1836 0%,#5b2a5e 24%,#b0466f 48%,#ff7e6b 74%,#ffb877 100%)">
+      <img src="assets/riders/come-ride.png" alt="" style="object-fit:contain;object-position:center bottom;">
+      <div class="grain"></div>
+    </div>
+    <div class="content" style="margin-top:calc(env(safe-area-inset-top) + 12px)">
       <div class="eyebrow reveal">You&rsquo;re invited</div>
       <h2 class="reveal d1">Come ride<br>Bali</h2>
       <div class="glass pad reveal d2">
@@ -747,7 +751,7 @@ a.ci:active .v.link{ color:var(--aqua); }
       <h2 class="reveal d1">More than<br>a trophy</h2>
       <div class="glass pad reveal d2">
         <ul class="deliv">
-          <li><b>15 winners</b> take home boards, wetsuits, bags &amp; apparel</li>
+          <li><b>15 winners</b> take home boards, bags &amp; apparel</li>
           <li>Food &amp; drinks for riders and crew, all weekend</li>
           <li>Test-ride zone &mdash; try the boards the whole weekend</li>
           <li>Coming from abroad? Tell us &mdash; we&rsquo;ll help you sort a place to stay</li>
@@ -799,10 +803,10 @@ a.ci:active .v.link{ color:var(--aqua); }
           <span class="v">DM us to claim your spot</span>
           <span class="v link">@mikskimboards</span>
         </a>
-        <a class="ci" href="https://wa.me/628562018133" target="_blank" rel="noopener">
+        <a class="ci" href="https://wa.me/6281224455729" target="_blank" rel="noopener">
           <b>WhatsApp</b>
-          <span class="v">Message Gonzo</span>
-          <span class="v link">+62 856 2018 133</span>
+          <span class="v">Message Tomy</span>
+          <span class="v link">+62 812 2445 5729</span>
         </a>
         <a class="ci" href="mailto:mikskimboards@gmail.com">
           <b>Email</b>
