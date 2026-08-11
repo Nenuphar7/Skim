@@ -18,16 +18,14 @@
 html,body{ height:100%; }
 body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-font-smoothing:antialiased; }
 
-/* scroll-snap deck; each slide is one screen, card centered inside */
 .deck{ height:100svh; overflow-y:scroll; scroll-snap-type:y mandatory; scroll-behavior:smooth; }
 .deck::-webkit-scrollbar{ display:none; } .deck{ scrollbar-width:none; }
 .slide{ height:100svh; scroll-snap-align:center; display:flex; align-items:center; justify-content:center; }
 
-/* the Instagram post frame: 4:5, square corners, clean rectangle */
 .card{ position:relative; overflow:hidden; background:var(--ink); color:var(--foam);
-  aspect-ratio:4/5; height:min(84svh,125vw); box-shadow:0 30px 70px -24px rgba(0,0,0,.7); }
+  aspect-ratio:4/5; height:min(84svh,125vw); box-shadow:0 30px 70px -24px rgba(0,0,0,.7);
+  container-type:inline-size; }
 
-/* backgrounds */
 .bg{ position:absolute; inset:0; z-index:0; }
 .grad{ background:radial-gradient(125% 90% at 50% -12%, #0d4854 0%, #063744 40%, #04212e 72%, #03151d 100%); }
 .grad::after{ content:""; position:absolute; inset:-25%;
@@ -43,60 +41,60 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
 .grain{ position:absolute; inset:0; z-index:1; opacity:.6; mix-blend-mode:soft-light; pointer-events:none;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/></svg>"); }
 
-/* content — sizes scale with the card via cqw (container query units) */
-.wrap{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column;
-  padding:9cqw 8cqw 7cqw; container-type:size; }
-.card{ container-type:inline-size; }
+.wrap{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column; padding:9cqw 8cqw 7cqw; }
 .wrap.center{ align-items:center; justify-content:center; text-align:center; }
 .wrap.split{ justify-content:space-between; }
 
 .rule{ width:9cqw; height:.5cqw; min-height:3px; border-radius:3px; background:var(--aqua); opacity:.9; margin-bottom:2.6cqw; }
-.kick{ font-family:var(--data); font-weight:500; font-size:2.5cqw; letter-spacing:.22em;
-  text-transform:uppercase; color:var(--aqua); }
+.kick{ font-family:var(--data); font-weight:500; font-size:2.5cqw; letter-spacing:.22em; text-transform:uppercase; color:var(--aqua); }
 .h{ font-family:var(--disp); font-weight:400; line-height:.9; letter-spacing:.006em; color:var(--foam); margin-top:1.8cqw; }
-.h.lg{ font-size:12.5cqw; } .h.md{ font-size:9.6cqw; }
+.h.xl{ font-size:15cqw; } .h.lg{ font-size:12.5cqw; } .h.md{ font-size:9.4cqw; }
+.sub{ font-family:var(--disp); font-size:5cqw; line-height:1; color:var(--aqua); margin-top:1.6cqw; }
 .spark{ color:var(--lemon); } .aq{ color:var(--aqua); }
 .lead{ font-size:3.7cqw; line-height:1.42; }
+.lead + .lead{ margin-top:2cqw; }
 .small{ font-family:var(--data); font-size:2.4cqw; letter-spacing:.04em; line-height:1.5; color:rgba(241,236,224,.72); }
 
 .panel{ position:relative; border-radius:3cqw;
   background:linear-gradient(135deg, rgba(255,255,255,.17), rgba(255,255,255,.05));
-  backdrop-filter:blur(18px) saturate(160%) brightness(1.05);
-  -webkit-backdrop-filter:blur(18px) saturate(160%) brightness(1.05);
+  backdrop-filter:blur(18px) saturate(160%) brightness(1.05); -webkit-backdrop-filter:blur(18px) saturate(160%) brightness(1.05);
   border:1px solid rgba(255,255,255,.26);
-  box-shadow: inset 0 1px 1px rgba(255,255,255,.5), inset 0 -18px 34px -22px rgba(255,255,255,.25),
-    0 26px 50px -18px rgba(2,16,24,.62); padding:5cqw 5.2cqw; }
+  box-shadow: inset 0 1px 1px rgba(255,255,255,.5), inset 0 -18px 34px -22px rgba(255,255,255,.25), 0 26px 50px -18px rgba(2,16,24,.62);
+  padding:5cqw 5.2cqw; }
 
 .sched{ display:flex; flex-direction:column; gap:3cqw; }
 .row{ display:grid; grid-template-columns:22cqw 1fr; gap:2.4cqw; align-items:baseline; }
-.row .t{ font-family:var(--data); font-weight:700; font-size:2.6cqw; letter-spacing:.05em;
-  text-transform:uppercase; color:var(--lemon); }
+.row .t{ font-family:var(--data); font-weight:700; font-size:2.6cqw; letter-spacing:.05em; text-transform:uppercase; color:var(--lemon); }
 .row .d{ font-size:3.2cqw; line-height:1.28; }
-.row .d small{ display:block; font-family:var(--data); font-size:2.2cqw; letter-spacing:.04em;
-  color:var(--aqua); margin-top:.6cqw; text-transform:uppercase; }
+.row .d small{ display:block; font-family:var(--data); font-size:2.2cqw; letter-spacing:.04em; color:var(--aqua); margin-top:.6cqw; text-transform:uppercase; }
 
 .list{ display:flex; flex-direction:column; gap:2.4cqw; }
-.list li{ list-style:none; display:flex; gap:2cqw; align-items:flex-start; font-size:3.5cqw; line-height:1.3; }
-.list li::before{ content:""; flex:none; width:1.5cqw; height:1.5cqw; margin-top:1.4cqw; border-radius:50%;
-  background:var(--aqua); box-shadow:0 0 0 .6cqw rgba(56,214,194,.16); }
+.list li{ list-style:none; display:flex; gap:2cqw; align-items:flex-start; font-size:3.4cqw; line-height:1.3; }
+.list li::before{ content:""; flex:none; width:1.5cqw; height:1.5cqw; margin-top:1.3cqw; border-radius:50%; background:var(--aqua); box-shadow:0 0 0 .6cqw rgba(56,214,194,.16); }
 
-.logo{ width:64cqw; height:auto; display:block; filter:drop-shadow(0 2cqw 5cqw rgba(2,16,24,.55)); }
-.place{ font-family:var(--data); font-size:2.7cqw; letter-spacing:.14em; text-transform:uppercase; color:var(--aqua); margin-top:4cqw; }
-.hand{ margin-top:4cqw; font-family:var(--data); font-size:2.6cqw; letter-spacing:.2em; text-transform:uppercase; color:rgba(241,236,224,.62); }
+.stats{ display:grid; grid-template-columns:1fr 1fr; gap:3cqw; }
+.stat b{ display:block; font-family:var(--disp); font-weight:400; font-size:8cqw; color:var(--lemon); line-height:1; }
+.stat span{ display:block; font-family:var(--data); font-size:2.4cqw; letter-spacing:.05em; text-transform:uppercase; color:rgba(241,236,224,.78); margin-top:1.1cqw; line-height:1.35; }
 
-/* reveal */
+.cats{ display:flex; flex-direction:column; }
+.cat{ display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid rgba(255,255,255,.14); padding:1.9cqw 0; }
+.cat:last-child{ border-bottom:none; }
+.cat b{ font-family:var(--disp); font-weight:400; font-size:4.6cqw; }
+.cat span{ font-family:var(--data); font-size:2.5cqw; letter-spacing:.08em; text-transform:uppercase; color:var(--aqua); }
+.award{ margin-top:2.4cqw; font-family:var(--data); font-size:2.5cqw; letter-spacing:.05em; text-transform:uppercase; color:var(--lemon); }
+
+.logo{ width:60cqw; height:auto; display:block; filter:drop-shadow(0 2cqw 5cqw rgba(2,16,24,.55)); }
+.place{ font-family:var(--data); font-size:2.6cqw; letter-spacing:.14em; text-transform:uppercase; color:var(--aqua); margin-top:3.4cqw; }
+.hand{ margin-top:2.4cqw; font-family:var(--data); font-size:2.6cqw; letter-spacing:.2em; text-transform:uppercase; color:rgba(241,236,224,.7); }
+
 .reveal{ opacity:0; transform:translateY(2.4cqw); }
 .card.in .reveal{ opacity:1; transform:none; transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
 .card.in .reveal.d1{ transition-delay:.08s } .card.in .reveal.d2{ transition-delay:.18s } .card.in .reveal.d3{ transition-delay:.28s }
 
-/* progress dots — OUTSIDE the card, below it */
-.dots{ position:fixed; left:0; right:0; bottom:max(18px,3svh); z-index:20;
-  display:flex; justify-content:center; align-items:center; gap:11px; pointer-events:none; }
-.dots button{ width:9px; height:9px; border-radius:50%; border:none; padding:0; cursor:pointer;
-  background:rgba(241,236,224,.28); transition:all .35s ease; pointer-events:auto; }
+.dots{ position:fixed; left:0; right:0; bottom:max(18px,3svh); z-index:20; display:flex; justify-content:center; align-items:center; gap:9px; pointer-events:none; }
+.dots button{ width:8px; height:8px; border-radius:50%; border:none; padding:0; cursor:pointer; background:rgba(241,236,224,.28); transition:all .35s ease; pointer-events:auto; }
 .dots button.on{ background:var(--aqua); box-shadow:0 0 14px 2px rgba(56,214,194,.7); transform:scale(1.35); }
-.hint{ position:fixed; top:max(14px,2svh); left:0; right:0; z-index:20; text-align:center;
-  font-family:var(--data); font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:rgba(241,236,224,.4); pointer-events:none; }
+.hint{ position:fixed; top:max(14px,2svh); left:0; right:0; z-index:20; text-align:center; font-family:var(--data); font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:rgba(241,236,224,.4); pointer-events:none; }
 </style>
 </head>
 <body>
@@ -106,24 +104,50 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
 
 <main class="deck" id="deck">
 
-  <!-- 1 · WEEKEND OVERVIEW -->
+  <!-- 1 · HOOK -->
+  <section class="slide"><div class="card">
+    <div class="bg"><video src="assets/hero.mp4" autoplay muted loop playsinline preload="auto"></video><div class="dim"></div></div>
+    <div class="grain"></div>
+    <div class="wrap split">
+      <div class="reveal"><div class="rule"></div><div class="kick">Save the date</div>
+        <h2 class="h lg">Indonesia&rsquo;s<br>first</h2>
+        <div class="sub">international skim gathering</div></div>
+      <div class="reveal d2"><div class="lead"><span class="spark">12&ndash;13 September 2026</span><br>Pantai Berawa &middot; Canggu, Bali</div></div>
+    </div>
+  </div></section>
+
+  <!-- 2 · WHY IT MATTERS -->
+  <section class="slide"><div class="card">
+    <div class="bg grad"></div>
+    <div class="grain"></div>
+    <div class="wrap split">
+      <div class="reveal"><div class="rule"></div><div class="kick">A tradition begins</div>
+        <h2 class="h md">Asia&rsquo;s newest<br>gathering</h2></div>
+      <div class="panel reveal d2">
+        <p class="lead">Every skim country has its annual gathering &mdash; Thailand, Malaysia, Taiwan, the Philippines. <span class="spark">Indonesia never did. Until now.</span></p>
+        <p class="lead">A new fixture in Asia&rsquo;s skim calendar, every September &mdash; on one of Bali&rsquo;s best skim beaches.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- 3 · WEEKEND AT A GLANCE -->
   <section class="slide"><div class="card">
     <div class="bg"><video src="assets/riders/crew.mp4" muted loop playsinline preload="metadata" style="transform:scale(1.2)"></video><div class="dim"></div></div>
     <div class="grain"></div>
     <div class="wrap split">
-      <div class="reveal"><div class="rule"></div><div class="kick">12&ndash;13 September 2026 &middot; Berawa</div>
+      <div class="reveal"><div class="rule"></div><div class="kick">Three days on the sand</div>
         <h2 class="h lg">The<br>weekend</h2></div>
       <div class="panel reveal d2">
         <div class="sched">
-          <div class="row"><span class="t">Fri 11</span><span class="d">Check-in<small>Registration &middot; test rides &middot; welcome night</small></span></div>
-          <div class="row"><span class="t">Sat 12</span><span class="d">Qualifiers<small>Heats all day &middot; sunset session + live music</small></span></div>
-          <div class="row"><span class="t">Sun 13</span><span class="d">Finals<small>15 winners &middot; closing party</small></span></div>
+          <div class="row"><span class="t">Fri 11</span><span class="d">Check-in day</span></div>
+          <div class="row"><span class="t">Sat 12</span><span class="d">Qualifiers &middot; sunset session</span></div>
+          <div class="row"><span class="t">Sun 13</span><span class="d">Finals &middot; closing party</span></div>
         </div>
       </div>
     </div>
   </div></section>
 
-  <!-- 2 · FRIDAY -->
+  <!-- 4 · FRIDAY -->
   <section class="slide"><div class="card">
     <div class="bg"><img src="assets/crowd/berawa.jpg" alt="" style="object-position:center 40%"><div class="dim"></div></div>
     <div class="grain"></div>
@@ -141,7 +165,7 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
     </div>
   </div></section>
 
-  <!-- 3 · SATURDAY -->
+  <!-- 5 · SATURDAY -->
   <section class="slide"><div class="card">
     <div class="bg grad"></div>
     <div class="grain"></div>
@@ -159,7 +183,7 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
     </div>
   </div></section>
 
-  <!-- 4 · SUNDAY -->
+  <!-- 6 · SUNDAY -->
   <section class="slide"><div class="card">
     <div class="bg grad"></div>
     <div class="grain"></div>
@@ -177,15 +201,57 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
     </div>
   </div></section>
 
-  <!-- 5 · SEE YOU ON THE SAND -->
+  <!-- 7 · HEAT FORMAT -->
   <section class="slide"><div class="card">
-    <div class="bg"><img src="assets/discuss/sunset.jpg" alt=""><div class="dim"></div></div>
+    <div class="bg grad"></div>
     <div class="grain"></div>
-    <div class="wrap center">
-      <img class="logo reveal" src="assets/brand/logo-pastel.png" alt="Bali Skim Gathering">
-      <h2 class="h md reveal d1" style="margin-top:4cqw">See you on<br>the sand</h2>
-      <p class="lead reveal d2" style="margin-top:3cqw">Pantai Berawa, Canggu<br><span class="aq">Free entry &middot; everyone welcome</span></p>
-      <div class="hand reveal d3">Follow @mikskimboards</div>
+    <div class="wrap split">
+      <div class="reveal"><div class="rule"></div><div class="kick">How it runs</div>
+        <h2 class="h lg">One shot,<br>five up</h2></div>
+      <div class="panel reveal d2">
+        <div class="stats">
+          <div class="stat"><b>5</b><span>riders per heat</span></div>
+          <div class="stat"><b>10+5</b><span>min riding + break</span></div>
+          <div class="stat"><b>4</b><span>heats per hour</span></div>
+          <div class="stat"><b>1</b><span>qualifying run each</span></div>
+        </div>
+        <p class="small" style="margin-top:3.4cqw">~17 heats at 50 riders, ~25 at 80. Start times set from the 11&ndash;13 Sep tide table.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- 8 · CATEGORIES -->
+  <section class="slide"><div class="card">
+    <div class="bg grad"></div>
+    <div class="grain"></div>
+    <div class="wrap split">
+      <div class="reveal"><div class="rule"></div><div class="kick">Five categories &middot; fifteen winners</div>
+        <h2 class="h lg">Categories</h2></div>
+      <div class="panel reveal d2">
+        <div class="cats">
+          <div class="cat"><b>Groms</b><span>under 12</span></div>
+          <div class="cat"><b>Women</b><span>open age</span></div>
+          <div class="cat"><b>Amateur</b><span>open age</span></div>
+          <div class="cat"><b>Pro</b><span>open age</span></div>
+          <div class="cat"><b>Masters</b><span>40+</span></div>
+        </div>
+        <div class="award">+ Best Wipeout &middot; three winners each = 15 podiums</div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- 9 · THE FIELD + STAMP -->
+  <section class="slide"><div class="card">
+    <div class="bg"><img src="assets/misc/krabi-group.jpg" alt="" style="object-position:center 30%"><div class="dim"></div></div>
+    <div class="grain"></div>
+    <div class="wrap split">
+      <div class="reveal"><div class="rule"></div><div class="kick">The field</div>
+        <h2 class="h md">50&ndash;80 riders<br>10+ countries</h2></div>
+      <div class="panel reveal d2">
+        <p class="lead">First names in: <span class="spark">Sonny Boy Aporbo</span> (Krabi &rsquo;25 top four) and France&rsquo;s <span class="spark">Anton Bruneau</span>.</p>
+        <p class="small" style="margin-top:2.2cqw">Philippines &middot; Japan &middot; Korea &middot; Taiwan &middot; Hong Kong &middot; Thailand &middot; Malaysia &middot; Singapore &middot; Australia &middot; France &middot; Finland &middot; South Africa</p>
+        <p class="hand" style="margin-top:3cqw">Bali Skim Gathering &middot; @mikskimboards</p>
+      </div>
     </div>
   </div></section>
 
@@ -206,11 +272,8 @@ function setActive(i){ dots.forEach((d,k)=>d.classList.toggle('on',k===i)); }
 const io=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     const v=e.target.querySelector('video');
-    if(e.isIntersecting){
-      e.target.classList.add('in');
-      if(v) v.play().catch(()=>{});
-      setActive(cards.indexOf(e.target));
-    } else { if(v) v.pause(); }
+    if(e.isIntersecting){ e.target.classList.add('in'); if(v) v.play().catch(()=>{}); setActive(cards.indexOf(e.target)); }
+    else { if(v) v.pause(); }
   });
 },{threshold:0.6});
 cards.forEach(c=>io.observe(c));
