@@ -1,1 +1,11 @@
-{ "cleanUrls": true }
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "baliskim.vercel.app" }],
+      "destination": "/viewer.html"
+    }
+  ]
+}
