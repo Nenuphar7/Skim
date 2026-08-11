@@ -5,11 +5,11 @@
     {
       "source": "/",
       "has": [{ "type": "host", "value": "baliskim.vercel.app" }],
-      "destination": "/viewer.html"
+      "destination": "/viewer"
     },
     {
       "source": "/",
-      "destination": "/sponsor.html"
+      "destination": "/sponsor"
     }
   ]
 }
