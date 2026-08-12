@@ -144,7 +144,7 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
 
   <!-- 3 · WEEKEND AT A GLANCE -->
   <section class="slide"><div class="card">
-    <div class="bg"><img src="assets/weekend/party.jpg" alt="" style="object-position:center 42%"><div class="dim"></div></div>
+    <div class="bg"><img src="assets/weekend/party.jpg" alt="" style="object-position:center 78%"><div class="dim"></div></div>
     <div class="grain"></div>
     <div class="wrap split">
       <div class="reveal"><div class="rule"></div><div class="kick">Three days on the sand</div>
@@ -306,10 +306,10 @@ setActive(0);
   });
   function bounds(){
     const cr=wrap.getBoundingClientRect(); W=cr.width; H=cr.height;
-    scale=Math.max(.42, Math.min(.9, W/720));
+    scale=Math.max(.52, Math.min(1.05, W/640));
     B.forEach(b=>{ b.r=b.baseR*scale; b.el.style.width=b.el.style.height=(b.r*2)+'px'; });
     const head=card.querySelector('.fld-head'); const hb=head?head.getBoundingClientRect():cr;
-    fTop=(hb.bottom-cr.top)+H*0.02; fBot=H;
+    fTop=(hb.bottom-cr.top)+H*0.02; fBot=H*0.66;
   }
   function yLo(r){return fTop+r;} function yHi(r){return Math.max(fTop+r,fBot-r);}
   function place(){ bounds(); B.forEach(b=>{ let ok=false,t=0;
