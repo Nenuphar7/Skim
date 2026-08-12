@@ -84,13 +84,12 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
 .stat span{ display:block; font-family:var(--data); font-size:3.1cqw; letter-spacing:.04em; text-transform:uppercase; color:rgba(241,236,224,.8); margin-top:1.1cqw; line-height:1.3; }
 
 .cats{ display:flex; flex-direction:column; }
-.cat{ display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid rgba(255,255,255,.14); padding:2.1cqw 0; }
+.cat{ display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid rgba(255,255,255,.14); padding:1.5cqw 0; }
 .cat:last-child{ border-bottom:none; }
-.cat b{ font-family:var(--disp); font-weight:400; font-size:6cqw; }
-.cat span{ font-family:var(--data); font-size:3.2cqw; letter-spacing:.07em; text-transform:uppercase; color:var(--aqua); }
-.award{ margin-top:2.6cqw; font-family:var(--data); font-size:3.2cqw; letter-spacing:.04em; text-transform:uppercase; color:var(--lemon); }
+.cat b{ font-family:var(--disp); font-weight:400; font-size:5cqw; }
+.cat span{ font-family:var(--data); font-size:2.9cqw; letter-spacing:.07em; text-transform:uppercase; color:var(--aqua); }
+.award{ margin-top:2cqw; font-family:var(--data); font-size:2.9cqw; letter-spacing:.04em; text-transform:uppercase; color:var(--lemon); }
 
-.stamp-logo{ width:40cqw; height:auto; display:block; filter:drop-shadow(0 1.5cqw 4cqw rgba(2,16,24,.5)); }
 .logo{ width:62cqw; height:auto; display:block; filter:drop-shadow(0 2cqw 5cqw rgba(2,16,24,.55)); }
 .hand{ margin-top:1.8cqw; font-family:var(--data); font-size:3.2cqw; letter-spacing:.18em; text-transform:uppercase; color:rgba(241,236,224,.72); }
 
@@ -102,6 +101,11 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
 .dots button{ width:8px; height:8px; border-radius:50%; border:none; padding:0; cursor:pointer; background:rgba(241,236,224,.28); transition:all .35s ease; pointer-events:auto; }
 .dots button.on{ background:var(--aqua); box-shadow:0 0 14px 2px rgba(56,214,194,.7); transform:scale(1.35); }
 .hint{ position:fixed; top:max(14px,2svh); left:0; right:0; z-index:20; text-align:center; font-family:var(--data); font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:rgba(241,236,224,.4); pointer-events:none; }
+.bubbles{ position:absolute; inset:0; z-index:1; overflow:hidden; pointer-events:none; }
+.bubble{ position:absolute; top:0; left:0; border-radius:50%; overflow:hidden; border:1.5px solid rgba(255,255,255,.55); backface-visibility:hidden; box-shadow: inset 0 2px 6px rgba(255,255,255,.6), inset 0 -10px 18px rgba(2,18,28,.45), 0 12px 26px -8px rgba(0,10,20,.55); will-change:transform; }
+.bubble .bflag{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.bubble .bname{ position:absolute; left:0; right:0; bottom:0; text-align:center; font-family:var(--data); font-size:10px; font-weight:500; letter-spacing:.02em; padding:6px 3px 5px; color:#fff; background:linear-gradient(transparent, rgba(3,18,26,.82)); }
+.bubble .bshine{ position:absolute; top:7%; left:12%; width:42%; height:34%; border-radius:50%; pointer-events:none; background:radial-gradient(circle at 32% 32%, rgba(255,255,255,.7), transparent 68%); }
 </style>
 </head>
 <body>
@@ -124,9 +128,9 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
     </div>
   </div></section>
 
-  <!-- 2 · WHY IT MATTERS -->
+  <!-- 2 · WHY IT MATTERS (skim video) -->
   <section class="slide"><div class="card">
-    <div class="bg grad"></div>
+    <div class="bg"><video src="assets/clips/clip1.mp4" muted loop playsinline preload="metadata"></video><div class="dim"></div></div>
     <div class="grain"></div>
     <div class="wrap split">
       <div class="reveal"><div class="rule"></div><div class="kick">A tradition begins</div>
@@ -138,9 +142,9 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
     </div>
   </div></section>
 
-  <!-- 3 · WEEKEND AT A GLANCE (skim video) -->
+  <!-- 3 · WEEKEND AT A GLANCE -->
   <section class="slide"><div class="card">
-    <div class="bg"><video src="assets/clips/clip1.mp4" muted loop playsinline preload="metadata"></video><div class="dim"></div></div>
+    <div class="bg"><img src="assets/weekend/party.jpg" alt="" style="object-position:center 42%"><div class="dim"></div></div>
     <div class="grain"></div>
     <div class="wrap split">
       <div class="reveal"><div class="rule"></div><div class="kick">Three days on the sand</div>
@@ -162,7 +166,7 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
     <div class="wrap split">
       <div class="reveal"><div class="rule"></div><div class="kick">Day 0 &middot; Friday 11 Sep</div>
         <h2 class="h lg">Check-in</h2></div>
-      <div class="panel reveal d2">
+      <div class="panel reveal d2" style="margin-bottom:11cqw">
         <ul class="list">
           <li>Registration &mdash; all day</li>
           <li>Board check &amp; test rides</li>
@@ -248,18 +252,17 @@ body{ background:#03141c; color:var(--foam); font-family:var(--body); -webkit-fo
     </div>
   </div></section>
 
-  <!-- 9 · THE FIELD + STAMP (logo) -->
-  <section class="slide"><div class="card">
-    <div class="bg"><img src="assets/misc/krabi-group.jpg" alt="" style="object-position:center 30%"><div class="dim"></div></div>
+  <!-- 9 · THE FIELD (flag bubbles) -->
+  <section class="slide"><div class="card field">
+    <div class="bg grad"></div>
+    <div class="bubbles" id="ig-bubbles"></div>
     <div class="grain"></div>
     <div class="wrap split">
-      <div class="reveal"><div class="rule"></div><div class="kick">The field</div>
+      <div class="reveal fld-head"><div class="rule"></div><div class="kick">The field</div>
         <h2 class="h" style="font-size:8.6cqw;margin-top:1.4cqw">50&ndash;80 riders &middot; 10+ countries</h2></div>
       <div class="panel reveal d2">
         <p class="lead">First names in: <span class="spark">Sonny Boy Aporbo</span> (Krabi &rsquo;25 top four) and France&rsquo;s <span class="spark">Anton Bruneau</span>.</p>
         <p class="small" style="margin-top:2cqw;font-size:2.8cqw">Philippines &middot; Japan &middot; Korea &middot; Taiwan &middot; Hong Kong &middot; Thailand &middot; Malaysia &middot; Singapore &middot; Australia &middot; France &middot; Finland &middot; South Africa</p>
-        <img class="stamp-logo" src="assets/brand/logo-pastel.png" alt="Bali Skim Gathering" style="margin-top:2.4cqw;width:26cqw">
-        <p class="hand">@mikskimboards</p>
       </div>
     </div>
   </div></section>
@@ -286,6 +289,54 @@ const io=new IntersectionObserver((entries)=>{
 },{threshold:0.6});
 cards.forEach(c=>io.observe(c));
 setActive(0);
+</script>
+<script>
+(function(){
+  const wrap=document.getElementById('ig-bubbles'); if(!wrap) return;
+  const card=wrap.closest('.card');
+  const data=[["Philippines","ph",52],["Japan","jp",46],["Korea","kr",40],["Taiwan","tw",36],
+    ["Hong Kong","hk",42],["Thailand","th",48],["Malaysia","my",38],["Singapore","sg",34],
+    ["Australia","au",50],["France","fr",44],["Finland","fi",37],["South Africa","za",45]];
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W=0,H=0,fTop=0,fBot=0,B=[],raf=0,running=false,placed=false,scale=1;
+  data.forEach(([name,code,r])=>{
+    const el=document.createElement('div'); el.className='bubble';
+    el.innerHTML='<img class="bflag" src="assets/flags/'+code+'.svg" alt=""><span class="bname">'+name+'</span><span class="bshine"></span>';
+    wrap.appendChild(el); B.push({el,baseR:r,r:r,x:0,y:0,vx:0,vy:0});
+  });
+  function bounds(){
+    const cr=wrap.getBoundingClientRect(); W=cr.width; H=cr.height;
+    scale=Math.max(.42, Math.min(.9, W/720));
+    B.forEach(b=>{ b.r=b.baseR*scale; b.el.style.width=b.el.style.height=(b.r*2)+'px'; });
+    const head=card.querySelector('.fld-head'); const hb=head?head.getBoundingClientRect():cr;
+    fTop=(hb.bottom-cr.top)+H*0.02; fBot=H;
+  }
+  function yLo(r){return fTop+r;} function yHi(r){return Math.max(fTop+r,fBot-r);}
+  function place(){ bounds(); B.forEach(b=>{ let ok=false,t=0;
+    while(!ok&&t++<120){ b.x=b.r+Math.random()*(W-2*b.r); b.y=yLo(b.r)+Math.random()*Math.max(1,(yHi(b.r)-yLo(b.r))); ok=true;
+      for(const o of B){ if(o===b||(o.x===0&&o.y===0))continue; if(Math.hypot(o.x-b.x,o.y-b.y)<b.r+o.r+4){ok=false;break;} } }
+    const a=Math.random()*Math.PI*2, sp=reduce?0:(0.2+Math.random()*0.42);
+    b.vx=Math.cos(a)*sp; b.vy=Math.sin(a)*sp;
+    b.el.style.transform='translate3d('+(b.x-b.r)+'px,'+(b.y-b.r)+'px,0)'; }); }
+  function step(){
+    for(const b of B){ b.x+=b.vx; b.y+=b.vy;
+      if(b.x<b.r){b.x=b.r;b.vx=-b.vx;} if(b.x>W-b.r){b.x=W-b.r;b.vx=-b.vx;}
+      const lo=yLo(b.r),hi=yHi(b.r); if(b.y<lo){b.y=lo;b.vy=-b.vy;} if(b.y>hi){b.y=hi;b.vy=-b.vy;} }
+    for(let i=0;i<B.length;i++) for(let j=i+1;j<B.length;j++){
+      const a=B[i],c=B[j]; let dx=c.x-a.x,dy=c.y-a.y; let d=Math.hypot(dx,dy)||0.001; const min=a.r+c.r;
+      if(d<min){ const nx=dx/d,ny=dy/d, ov=(min-d)/2; a.x-=nx*ov;a.y-=ny*ov;c.x+=nx*ov;c.y+=ny*ov;
+        const dvx=c.vx-a.vx,dvy=c.vy-a.vy, dot=dvx*nx+dvy*ny;
+        if(dot<0){ const mi=a.r*a.r,mj=c.r*c.r, p=2*dot/(mi+mj); a.vx+=p*mj*nx;a.vy+=p*mj*ny;c.vx-=p*mi*nx;c.vy-=p*mi*ny; } } }
+    for(const b of B){ const sp=Math.hypot(b.vx,b.vy); if(sp>1.0){b.vx*=1.0/sp;b.vy*=1.0/sp;}
+      b.el.style.transform='translate3d('+(b.x-b.r)+'px,'+(b.y-b.r)+'px,0)'; }
+    if(running) raf=requestAnimationFrame(step);
+  }
+  function start(){ if(running||reduce)return; bounds(); running=true; raf=requestAnimationFrame(step); }
+  function stop(){ running=false; cancelAnimationFrame(raf); }
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(()=>{place();placed=true;}); } else { setTimeout(()=>{place();placed=true;},400); }
+  new ResizeObserver(()=>{ if(placed){bounds();place();} }).observe(wrap);
+  new IntersectionObserver((es)=>{es.forEach(e=>{ if(e.isIntersecting){ if(!placed){place();placed=true;} start(); } else stop(); });},{threshold:.2}).observe(card);
+})();
 </script>
 </body>
 </html>
